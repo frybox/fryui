@@ -1,0 +1,102 @@
+from fryhcs import Element
+
+
+def Grid(columns=[], rows=[], resizable=False, children=[]):
+    if columns and rows and len(columns)*len(rows) < len(children):
+        raise RuntimeError(f"Too many children({len(children)}) specified")
+    if not columns and not rows:
+        raise RuntimeError("columns and rows must be specified")
+
+    # 如下两种情况会丢失分割比例
+    if not columns:
+        return <Split horizontal resizable={resizable} children={children} />
+    if not rows:
+        return <Split vertical resizable={resizable} children={children} />
+
+    ncol = len(columns)
+    nrow = len(rows)
+    nch  = len(children)
+    children += [<div></div>]*(ncol*nrow-nch)
+    ich = 0
+    newchildren = []
+    ncol = ncol*2-1
+    nrow = nrow*2-1
+    for row in range(0, nrow):
+        if row%2 == 0:
+            for col in range(0, ncol):
+                if col%2 == 0:
+                    newchildren.append(children[ich])
+                    ich += 1
+                else:
+                    props = dict(col=col, row=row, ncol=ncol, nrow=nrow)
+                    newchildren.append(<Gutter type="vertical" {**props} />)
+        else:
+            for col in range(0, ncol):
+                props = dict(col=col, row=row, ncol=ncol, nrow=nrow)
+                if col%2 == 0:
+                    newchildren.append(<Gutter type="horizontal" {**props} />)
+                else:
+                    newchildren.append(<Gutter type="cross" {**props} />)
+    gridprop = {
+        'grid-template-columns': ' 8px '.join(columns),
+        'grid-template-rows':    ' 8px '.join(rows),
+    }
+    return (
+    <div grid style={gridprop}>
+        {newchildren}
+    </div>
+    )
+
+
+def Split(vertical=None, horizontal=None, resizable=False, children=[]):
+    pass
+
+def Pane(min=0, max=99999):
+    pass
+
+def Gutter(type, col, row, ncol, nrow):
+    if type == 'cross':
+        style = ['border-r', 'border-b', 'cursor-move']
+    elif type == 'horizontal':
+        style = ['border-b', 'cursor-ns-resize']
+    elif type == 'vertical':
+        style = ['border-r', 'cursor-ew-resize']
+    else:
+        raise RuntimeError("One and ONLY one of 'cross', 'horizontal', 'vertical' should be specified for Gutter.")
+    return (
+        <div ref=(el) @mouseenter=(showBar) @mouseleave=(hideBar)
+             transition-colors duration-300 ease-in-out
+             bg-none border-slate-300 {*style}>
+        </div>
+        <script el type col row ncol nrow>
+            const bgColor = 'bg-sky-500'
+            const grid = el.parentElement
+            const elementAt = (c, r) => grid.children[r*ncol+c]
+            const showBar = () => {
+                if (type === 'horizontal' || type === 'cross')
+                    for (let c=0; c<ncol; c++)
+                        elementAt(c, row).classList.add(bgColor)
+                if (type === 'vertical' || type === 'cross')
+                    for (let r=0; r<nrow; r++)
+                        elementAt(col, r).classList.add(bgColor)
+            }
+            const hideBar = () => {
+                if (type === 'horizontal' || type === 'cross')
+                    for (let c=0; c<ncol; c++)
+                        elementAt(c, row).classList.remove(bgColor)
+                if (type === 'vertical' || type === 'cross')
+                    for (let r=0; r<nrow; r++)
+                        elementAt(col, r).classList.remove(bgColor)
+            }
+        </script>)
+
+
+if __name__ == '__main__':
+    from fryhcs import render
+    columns = ['1fr', '1fr', '1fr']
+    rows = ['1fr', '1fr']
+    print(render(<Grid columns={columns} rows={rows} resizable={True}>
+                   <div> </div>
+                   <div> </div>
+                   <div> </div>
+                 </Grid>))
