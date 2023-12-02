@@ -28,21 +28,35 @@ def Grid(columns=[], rows=[], resizable=False, children=[]):
                     newchildren.append(children[ich])
                     ich += 1
                 else:
-                    newchildren.append(<Gutter type="vertical" col row ncol nrow resizable />)
+                    newchildren.append(<Gutter refall=(vgutters) type="vertical" col row ncol nrow resizable />)
         else:
             for col in range(0, ncol):
                 if col%2 == 0:
-                    newchildren.append(<Gutter type="horizontal" col row ncol nrow resizable />)
+                    newchildren.append(<Gutter refall=(hgutters) type="horizontal" col row ncol nrow resizable />)
                 else:
-                    newchildren.append(<Gutter type="cross" col row ncol nrow resizable />)
+                    newchildren.append(<Gutter refall=(cgutters) type="cross" col row ncol nrow resizable />)
     gridprop = {
-        'grid-template-columns': ' 8px '.join(columns),
-        'grid-template-rows':    ' 8px '.join(rows),
+        'grid-template-columns': ' 1px '.join(columns),
+        'grid-template-rows':    ' 1px '.join(rows),
     }
     return (
       <div grid style={gridprop}>
         {newchildren}
-      </div>)
+      </div>
+      <script>
+        import { effect } from "fryhcs";
+
+        for (const gutter of vgutters) {
+            const { isShow } = gutter;
+            effect(() => isShow.value ? showBar(gutter) : hideBar(gutter));
+        }
+
+        const showBar = (gutter) => {
+        }
+        const hideBar = (gutter) => {
+        }
+      </script>
+    )
 
 
 def Split(vertical=None, horizontal=None, resizable=False, children=[]):
@@ -66,12 +80,12 @@ def Gutter(type, col, row, ncol, nrow, resizable):
     return (
         <div ref=(el) @mouseenter=(showBar) @mouseleave=(hideBar)
              @mousedown=(startDrag) @touchstart=(startDrag)
-             transition-colors duration-300 ease-in-out
-             bg-none relative {*style}>
-          <div ref=(hsub) absolute bg-none border-slate-300 h-1/2 w-full top-0 left-0 z-0></div>
-          <div ref=(vsub) absolute bg-none border-slate-300 w-1/2 h-full top-0 left-0 z-0></div>
+             bg-gray-800 relative {*style}>
+          <div ref=(bar) absolute bg-none transition-colors duration-300 ease-in-out></div>
         </div>
         <script type col row ncol nrow resizable>
+            import { signal } from 'fryhcs';
+
             let dragging = false;
             let cols = [];
             let rows = [];
@@ -110,10 +124,12 @@ def Gutter(type, col, row, ncol, nrow, resizable):
                 throw Error(`Invalid track index ${col}`)
             }
             if (ish) {
-                hsub.classList.add('border-b');
+                bar.classList.add('-top-3px');
+                bar.classList.add('h-7px');
             }
             if (isv) {
-                vsub.classList.add('border-r');
+                bar.classList.add('-left-3px');
+                bar.classList.add('w-7px');
             }
 
             const numeric = (value, unit) => Number(value.slice(0, -1 * unit.length))
@@ -180,6 +196,16 @@ def Gutter(type, col, row, ncol, nrow, resizable):
 
             const NOOP = () => false
             const elementAt = (c, r) => grid.children[r*ncol+c]
+
+            const showBar = () => bar.classList.add(bgColor);
+            const hideBar = () => bar.classList.remove(bgColor);
+            const isShow = signal(false);
+
+            export default {
+                showBar,
+                hideBar,
+                isShow,
+            };
 
             const showBar = () => {
                 if (ish)
