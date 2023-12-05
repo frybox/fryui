@@ -1,0 +1,38 @@
+from fryhcs import html, Element
+from flask import Flask
+from fryui.grid import Grid, HSplit, VSplit
+
+app = Flask(__name__)
+
+@app.get('/')
+def index():
+    grid = (
+      <div m-10 border-3 border-cyan-500 h-80vh>
+        <HSplit resizable={True}>
+          <HSplit resizable={True}>
+            <Center>A</Center>
+            <Center>B</Center>
+            <Center>C</Center>
+          </HSplit>
+          <VSplit resizable={True}>
+            <Center>A</Center>
+            <Center>C</Center>
+          </VSplit>
+          <Grid columns={('1fr', '1fr', '1fr')} rows={('1fr', '1fr')} resizable={True}>
+            <Center>A</Center>
+            <Center>B</Center>
+            <Center>C</Center>
+            <Center>D</Center>
+            <Center>E</Center>
+            <Center>F</Center>
+          </Grid>
+        </HSplit>
+      </div>)
+    return html(grid, title="fryui")
+
+def Center(children=[]):
+    <template>
+      <div flex justify-center items-center>
+        {children}
+      </div>
+    </template>
