@@ -1,17 +1,14 @@
 from fryhcs import Element
 
+col_prop_name = 'grid-template-columns'
+row_prop_name = 'grid-template-rows'
 
 def Grid(columns=[], rows=[], resizable=False, children=[]):
-    if columns and rows and len(columns)*len(rows) < len(children):
-        raise RuntimeError(f"Too many children({len(children)}) specified")
-    if not columns and not rows:
-        raise RuntimeError("columns and rows must be specified")
+    if not columns or not rows:
+        raise RuntimeError("'columns' and 'rows' must be specified for Grid.")
 
-    # 如下两种情况会丢失分割比例
-    if not columns:
-        return <Split type="horizontal" resizable children />
-    if not rows:
-        return <Split type='vertical' resizable children />
+    if len(columns)*len(rows) < len(children):
+        raise RuntimeError(f"Too many children({len(children)}) specified for grid of {len(columns)} columns and {len(rows)} rows.")
 
     ncol = len(columns)
     nrow = len(rows)
@@ -28,330 +25,398 @@ def Grid(columns=[], rows=[], resizable=False, children=[]):
                     newchildren.append(children[ich])
                     ich += 1
                 else:
-                    newchildren.append(<Gutter refall=(vgutters) type="vertical" col row ncol nrow resizable />)
+                    newchildren.append(<Gutter refall=(gutters) col row ncol nrow resizable />)
         else:
             for col in range(0, ncol):
                 if col%2 == 0:
-                    newchildren.append(<Gutter refall=(hgutters) type="horizontal" col row ncol nrow resizable />)
+                    newchildren.append(<Gutter refall=(gutters) col row ncol nrow resizable />)
                 else:
-                    newchildren.append(<Gutter refall=(cgutters) type="cross" col row ncol nrow resizable />)
+                    newchildren.append(<Gutter refall=(gutters) col row ncol nrow resizable />)
     gridprop = {
-        'grid-template-columns': ' 1px '.join(columns),
-        'grid-template-rows':    ' 1px '.join(rows),
+        col_prop_name: ' 1px '.join(columns),
+        row_prop_name: ' 1px '.join(rows),
     }
-    return (
-      <div grid style={gridprop}>
+
+    <template>
+      <div grid h-full style={gridprop}>
         {newchildren}
       </div>
-      <script>
-        import { effect } from "fryhcs";
+    </template>
 
-        for (const gutter of vgutters) {
-            const { isShow } = gutter;
-            effect(() => isShow.value ? showBar(gutter) : hideBar(gutter));
-        }
+    <script ncol nrow resizable>
+      import { effect } from "fryhcs";
 
-        const showBar = (gutter) => {
-        }
-        const hideBar = (gutter) => {
-        }
-      </script>
-    )
+      const gutterMap = {}
+
+      const elementAt = (c, r) => gutterMap[r*ncol+c];
+
+      const showLine = (gutter) => {
+          if (gutter.ish)
+              for (let c=0; c<ncol; c++)
+                  if (c != gutter.col)
+                      elementAt(c, gutter.row).show();
+          if (gutter.isv)
+              for (let r=0; r<nrow; r++)
+                  if (r != gutter.row)
+                      elementAt(gutter.col, r).show();
+      }
+
+      const hideLine = (gutter) => {
+          if (gutter.ish)
+              for (let c=0; c<ncol; c++)
+                  if (c != gutter.col)
+                      elementAt(c, gutter.row).hide();
+          if (gutter.isv)
+              for (let r=0; r<nrow; r++)
+                  if (r != gutter.row)
+                      elementAt(gutter.col, r).hide();
+      }
+
+      gutters.forEach(g => gutterMap[g.row*ncol+g.col] = g);
+      gutters.forEach(g => effect(()=>g.isShow.value ? showLine(g) : hideLine(g)));
+    </script>
 
 
-def Split(vertical=None, horizontal=None, resizable=False, children=[]):
-    pass
+def HSplit(resizable=False, children=[]):
+    newchildren = []
+    nrow = len(children)*2-1
+    ich = 0
+    for row in range(0, nrow):
+        if row%2 == 0:
+            newchildren.append(children[ich])
+            ich += 1
+        else:
+            newchildren.append(<Gutter row nrow resizable />)
+    gridprop = {
+        row_prop_name: ' 1px '.join('1fr' for x in range(len(children))),
+    }
 
-def Pane(min=0, max=99999):
-    pass
+    <template>
+      <div grid h-full style={gridprop} ref=(grid)>
+        {newchildren}
+      </div>
+    </template>
 
-def Gutter(type, col, row, ncol, nrow, resizable):
-    if type == 'cross':
+
+def VSplit(resizable=False, children=[]):
+    newchildren = []
+    ncol = len(children)*2-1
+    ich = 0
+    for col in range(0, ncol):
+        if col%2 == 0:
+            newchildren.append(children[ich])
+            ich += 1
+        else:
+            newchildren.append(<Gutter col ncol resizable />)
+    gridprop = {
+        col_prop_name: ' 1px '.join('1fr' for x in range(len(children))),
+    }
+
+    <template>
+      <div grid h-full style={gridprop}>
+        {newchildren}
+      </div>
+    </template>
+
+
+def Pane(min='0px', max='99999px', children=[], **props):
+    <template>
+      <div {**props}>
+        {children}
+      </div>
+    </template>
+
+
+def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=False):
+    ish = row%2 == 1
+    isv = col%2 == 1
+    if ish and (row <= 0 or row >= nrow-1):
+        raise RuntimeError(f"Invalid gutter row: {row}")
+    if isv and (col <= 0 or col >= ncol-1):
+        raise RuntimeError(f"Invalid gutter col: {col}")
+    if ish and isv:
         style = ['cursor-move']
-    elif type == 'horizontal':
+    elif ish:
         style = ['cursor-ns-resize']
-    elif type == 'vertical':
+    elif isv:
         style = ['cursor-ew-resize']
-    else:
-        raise RuntimeError("One and ONLY one of 'cross', 'horizontal', 'vertical' should be specified for Gutter type.")
 
     if not resizable:
         style = []
-    return (
-        <div ref=(el) @mouseenter=(showBar) @mouseleave=(hideBar)
+
+    <template>
+        <div ref=(el) @mouseenter=(setShow) @mouseleave=(setHide)
              @mousedown=(startDrag) @touchstart=(startDrag)
-             bg-gray-800 relative {*style}>
-          <div ref=(bar) absolute bg-none transition-colors duration-300 ease-in-out></div>
+             bg-gray-300 relative>
+          <div ref=(bar) absolute
+               bg-none transition-colors duration-300 ease-in-out
+               z-100 {*style}>
+          </div>
         </div>
-        <script type col row ncol nrow resizable>
-            import { signal } from 'fryhcs';
+    </template>
+    <script ish isv col row ncol nrow resizable>
+        import { signal } from 'fryhcs';
 
-            let dragging = false;
-            let cols = [];
-            let rows = [];
-            let pxcols = [];
-            let pxrows = [];
-            let colfr2px = 0;
-            let rowfr2px = 0;
-            let colpercent2px = 0;
-            let rowpercent2px = 0;
-            let colOffset1 = 0;
-            let colOffset2 = 0;
-            let colfrs = [];
-            let colpercents = [];
-            let rowOffset1 = 0;
-            let rowOffset2 = 0;
-            let rowfrs = [];
-            let rowpercents = [];
-            let colStart = 0;
-            let colEnd = 0;
-            let rowStart = 0;
-            let rowEnd = 0;
-            let gridWidth, gridHeight, gridTop, gridBottom, gridLeft, gridRight;
+        let dragging = false;
+        let cols = [];
+        let rows = [];
+        let pxcols = [];
+        let pxrows = [];
+        let colfr2px = 0;
+        let rowfr2px = 0;
+        let colpercent2px = 0;
+        let rowpercent2px = 0;
+        let colOffset1 = 0;
+        let colOffset2 = 0;
+        let colfrs = [];
+        let colpercents = [];
+        let rowOffset1 = 0;
+        let rowOffset2 = 0;
+        let rowfrs = [];
+        let rowpercents = [];
+        let colStart = 0;
+        let colEnd = 0;
+        let rowStart = 0;
+        let rowEnd = 0;
+        let gridWidth, gridHeight, gridTop, gridBottom, gridLeft, gridRight;
 
-            const columnPropName = 'grid-template-columns';
-            const rowPropName = 'grid-template-rows';
-            const bgColor = 'bg-sky-500';
-            const grid = el.parentElement;
+        const columnPropName = 'grid-template-columns';
+        const rowPropName = 'grid-template-rows';
+        const bgColor = 'bg-sky-500';
+        const grid = el.parentElement;
 
-            const ish = type == 'horizontal' || type == 'cross'
-            const isv = type == 'vertical' || type == 'cross'
+        bar.classList.add('h-full');
+        bar.classList.add('w-full');
+        if (ish) {
+            bar.classList.add('-top-3px');
+            bar.classList.add('h-7px');
+            bar.classList.remove('h-full');
+        }
+        if (isv) {
+            bar.classList.add('-left-3px');
+            bar.classList.add('w-7px');
+            bar.classList.remove('w-full');
+        }
 
-            if (ish && (row <= 0 || row >= nrow-1)) {
-                throw Error(`Invalid track index ${row}`)
+        const numeric = (value, unit) => Number(value.slice(0, -1 * unit.length))
+        const parseValue = function (value) {
+            if (value.endsWith('px'))
+                { return { value: value, type: 'px', numeric: numeric(value, 'px') } }
+            if (value.endsWith('fr'))
+                { return { value: value, type: 'fr', numeric: numeric(value, 'fr') } }
+            if (value.endsWith('%'))
+                { return { value: value, type: '%', numeric: numeric(value, '%') } }
+            if (value === 'auto') { return { value: value, type: 'auto' } }
+            return null
+        }
+
+        const unparseValue = v => v.value ? v.value : `${v.numeric}${v.type}`;
+        const parse = rule => rule.split(' ').map(parseValue);
+        const unparse = tracks => tracks.map(unparseValue).join(' ');
+
+        const getColBegin = i => pxcols.slice(0,i).reduce((acc,v)=>acc+v.numeric, 0);
+        const getColEnd = i => pxcols.slice(0,i+1).reduce((acc,v)=>acc+v.numeric, 0);
+        const getRowBegin = i => pxrows.slice(0,i).reduce((acc,v)=>acc+v.numeric, 0);
+        const getRowEnd = i => pxrows.slice(0,i+1).reduce((acc,v)=>acc+v.numeric, 0);
+        const getMouseX = e => 'touches' in e ? e.touches[0].clientX : e.clientX;
+        const getMouseY = e => 'touches' in e ? e.touches[0].clientY : e.clientY;
+
+        const setColSize = (i, size) => {
+            cols[i].value = null;
+            if (cols[i].type === 'px') {
+                cols[i].numeric = size;
+            } else if (cols[i].type === 'fr') {
+                if (colfrs.length === 1) {
+                    cols[i].numeric = 1;
+                } else {
+                    cols[i].numeric = size / colfr2px;
+                }
+            } else if (cols[i].type === '%') {
+                cols[i].numeric = size / colpercent2px;
             }
-            if (isv && (col <= 0 || col >= ncol-1)) {
-                throw Error(`Invalid track index ${col}`)
+        }
+
+        const setRowSize = (i, size) => {
+            rows[i].value = null;
+            if (rows[i].type === 'px') {
+                rows[i].numeric = size;
+            } else if (rows[i].type === 'fr') {
+                if (rowfrs.length === 1) {
+                    rows[i].numeric = 1;
+                } else {
+                    rows[i].numeric = size / rowfr2px;
+                }
+            } else if (rows[i].type === '%') {
+                rows[i].numeric = size / rowpercent2px;
             }
+        }
+
+        const firstNonZero = (tracks, type) => {
+            for (let i = 0; i < tracks.length; i++) {
+                if (tracks[i].type == type && tracks[i].numeric > 0) {
+                    return i
+                }
+            }
+            return null
+        }
+
+        const NOOP = () => false
+
+        const show = () => bar.classList.add(bgColor);
+        const hide = () => bar.classList.remove(bgColor);
+        const isShow = signal(false);
+
+        const setShow = () => {
+            if (resizable) {
+                isShow.value = true;
+                show();
+            }
+        }
+        const setHide = () => {
+            if (!dragging && resizable) {
+                isShow.value = false;
+                hide();
+            }
+        }
+
+        export default {
+            show,
+            hide,
+            isShow,
+            col,
+            row,
+            ish,
+            isv,
+        };
+
+
+        const initDrag = (e) => {
+            const rect = grid.getBoundingClientRect();
+            gridWidth = rect.width;
+            gridHeight = rect.height;
+            gridTop = rect.top;
+            gridBottom = rect.bottom;
+            gridLeft = rect.left;
+            gridRight = rect.right;
+
+            const mouseX = getMouseX(e);
+            const mouseY = getMouseY(e);
+
             if (ish) {
-                bar.classList.add('-top-3px');
-                bar.classList.add('h-7px');
+                let prop = grid.style[rowPropName];
+                if (prop) rows = parse(prop);
+
+                prop = window.getComputedStyle(grid)[rowPropName];
+                if (prop) pxrows = parse(prop);
+
+                rowOffset1 = mouseY - gridTop - getRowBegin(row);
+                rowOffset2 = pxrows[row].numeric - rowOffset1;
+                rowfrs = rows.filter(r => r.type === 'fr')
+                rowpercents = rows.filter(r => r.type === '%')
+                if (rowfrs.length) {
+                    let r = firstNonZero(rows, 'fr')
+                    if (r !== null)
+                        rowfr2px = pxrows[r].numeric / rows[r].numeric;
+                }
+                if (rowpercents.length) {
+                    let r = firstNonZero(rows, '%')
+                    if (r !== null)
+                        rowpercent2px = pxrows[r].numeric / rows[r].numeric;
+                }
+                rowStart = getRowBegin(row-1);
+                rowEnd = getRowEnd(row+1);
+            }
+
+            if (isv) {
+                let prop = grid.style[columnPropName];
+                if (prop) cols = parse(prop);
+
+                prop = window.getComputedStyle(grid)[columnPropName];
+                if (prop) pxcols = parse(prop);
+                
+                colOffset1 = mouseX - gridLeft - getColBegin(col);
+                colOffset2 = pxcols[col].numeric - colOffset1;
+                colfrs = cols.filter(c => c.type === 'fr')
+                colpercents = cols.filter(c => c.type === '%')
+                if (colfrs.length) {
+                    let c = firstNonZero(cols, 'fr')
+                    if (c !== null)
+                        colfr2px = pxcols[c].numeric / cols[c].numeric;
+                }
+                if (colpercents.length) {
+                    let c = firstNonZero(cols, '%')
+                    if (c !== null)
+                        colpercent2px = pxcols[c].numeric / cols[c].numeric;
+                }
+                colStart = getColBegin(col-1);
+                colEnd = getColEnd(col+1);
+            }
+        }
+
+        const startDrag = (e) => {
+            if (!resizable) return
+            if ('button' in e && e.button !== 0)
+                return
+            e.preventDefault();
+            initDrag(e);
+            dragging = true;
+            window.addEventListener('mouseup', stopDrag);
+            window.addEventListener('touchend', stopDrag);
+            window.addEventListener('touchcancel', stopDrag);
+            window.addEventListener('mousemove', drag);
+            window.addEventListener('touchmove', drag);
+
+            grid.addEventListener('selectstart', NOOP);
+            grid.addEventListener('dragstart', NOOP);
+
+            grid.style.userSelect = 'none';
+            grid.style.webkitUserSelect = 'none';
+            grid.style.MozUserSelect = 'none';
+            grid.style.pointerEvents = 'none';
+            setShow();
+        }
+
+        const drag = e => {
+            if (ish) {
+                let mouseY = getMouseY(e);
+                const minPos = gridTop + rowStart + rowOffset1;
+                const maxPos = gridTop + rowEnd - rowOffset2;
+                if (mouseY < minPos) mouseY = minPos;
+                if (mouseY > maxPos) mouseY = maxPos;
+                setRowSize(row-1, mouseY-minPos);
+                setRowSize(row+1, maxPos-mouseY);
+                grid.style[rowPropName] = unparse(rows);
             }
             if (isv) {
-                bar.classList.add('-left-3px');
-                bar.classList.add('w-7px');
+                let mouseX = getMouseX(e);
+                const minPos = gridLeft + colStart + colOffset1;
+                const maxPos = gridLeft + colEnd - colOffset2;
+                if (mouseX < minPos) mouseX = minPos;
+                if (mouseX > maxPos) mouseX = maxPos;
+                setColSize(col-1, mouseX-minPos);
+                setColSize(col+1, maxPos-mouseX);
+                grid.style[columnPropName] = unparse(cols);
             }
+        }
 
-            const numeric = (value, unit) => Number(value.slice(0, -1 * unit.length))
-            const parseValue = function (value) {
-                if (value.endsWith('px'))
-                    { return { value: value, type: 'px', numeric: numeric(value, 'px') } }
-                if (value.endsWith('fr'))
-                    { return { value: value, type: 'fr', numeric: numeric(value, 'fr') } }
-                if (value.endsWith('%'))
-                    { return { value: value, type: '%', numeric: numeric(value, '%') } }
-                if (value === 'auto') { return { value: value, type: 'auto' } }
-                return null
-            }
+        const stopDrag = () => {
+            dragging = false;
+            window.removeEventListener('mouseup', stopDrag);
+            window.removeEventListener('touchend', stopDrag);
+            window.removeEventListener('touchcancel', stopDrag);
+            window.removeEventListener('mousemove', drag);
+            window.removeEventListener('touchmove', drag);
 
-            const unparseValue = v => v.value ? v.value : `${v.numeric}${v.type}`;
-            const parse = rule => rule.split(' ').map(parseValue);
-            const unparse = tracks => tracks.map(unparseValue).join(' ');
+            grid.removeEventListener('selectstart', NOOP);
+            grid.removeEventListener('dragstart', NOOP);
 
-            const getColBegin = i => pxcols.slice(0,i).reduce((acc,v)=>acc+v.numeric, 0);
-            const getColEnd = i => pxcols.slice(0,i+1).reduce((acc,v)=>acc+v.numeric, 0);
-            const getRowBegin = i => pxrows.slice(0,i).reduce((acc,v)=>acc+v.numeric, 0);
-            const getRowEnd = i => pxrows.slice(0,i+1).reduce((acc,v)=>acc+v.numeric, 0);
-            const getMouseX = e => 'touches' in e ? e.touches[0].clientX : e.clientX;
-            const getMouseY = e => 'touches' in e ? e.touches[0].clientY : e.clientY;
-
-            const setColSize = (i, size) => {
-                cols[i].value = null;
-                if (cols[i].type === 'px') {
-                    cols[i].numeric = size;
-                } else if (cols[i].type === 'fr') {
-                    if (colfrs.length === 1) {
-                        cols[i].numeric = 1;
-                    } else {
-                        cols[i].numeric = size / colfr2px;
-                    }
-                } else if (cols[i].type === '%') {
-                    cols[i].numeric = size / colpercent2px;
-                }
-            }
-
-            const setRowSize = (i, size) => {
-                rows[i].value = null;
-                if (rows[i].type === 'px') {
-                    rows[i].numeric = size;
-                } else if (rows[i].type === 'fr') {
-                    if (rowfrs.length === 1) {
-                        rows[i].numeric = 1;
-                    } else {
-                        rows[i].numeric = size / rowfr2px;
-                    }
-                } else if (rows[i].type === '%') {
-                    rows[i].numeric = size / rowpercent2px;
-                }
-            }
-
-            const firstNonZero = (tracks, type) => {
-                for (let i = 0; i < tracks.length; i++) {
-                    if (tracks[i].type == type && tracks[i].numeric > 0) {
-                        return i
-                    }
-                }
-                return null
-            }
-
-            const NOOP = () => false
-            const elementAt = (c, r) => grid.children[r*ncol+c]
-
-            const showBar = () => bar.classList.add(bgColor);
-            const hideBar = () => bar.classList.remove(bgColor);
-            const isShow = signal(false);
-
-            export default {
-                showBar,
-                hideBar,
-                isShow,
-            };
-
-            const showBar = () => {
-                if (ish)
-                    for (let c=0; c<ncol; c++)
-                        elementAt(c, row).classList.add(bgColor)
-                if (isv)
-                    for (let r=0; r<nrow; r++)
-                        elementAt(col, r).classList.add(bgColor)
-            }
-            const hideBar = () => {
-                if (dragging) return;
-                if (ish)
-                    for (let c=0; c<ncol; c++)
-                        elementAt(c, row).classList.remove(bgColor)
-                if (isv)
-                    for (let r=0; r<nrow; r++)
-                        elementAt(col, r).classList.remove(bgColor)
-            }
-
-            const initDrag = (e) => {
-                const rect = grid.getBoundingClientRect();
-                gridWidth = rect.width;
-                gridHeight = rect.height;
-                gridTop = rect.top;
-                gridBottom = rect.bottom;
-                gridLeft = rect.left;
-                gridRight = rect.right;
-
-                const mouseX = getMouseX(e);
-                const mouseY = getMouseY(e);
-
-                if (ish) {
-                    let prop = grid.style[rowPropName];
-                    if (prop) rows = parse(prop);
-
-                    prop = window.getComputedStyle(grid)[rowPropName];
-                    if (prop) pxrows = parse(prop);
-
-                    rowOffset1 = mouseY - gridTop - getRowBegin(row);
-                    rowOffset2 = pxrows[row].numeric - rowOffset1;
-                    rowfrs = rows.filter(r => r.type === 'fr')
-                    rowpercents = rows.filter(r => r.type === '%')
-                    if (rowfrs.length) {
-                        let r = firstNonZero(rows, 'fr')
-                        if (r !== null)
-                            rowfr2px = pxrows[r].numeric / rows[r].numeric;
-                    }
-                    if (rowpercents.length) {
-                        let r = firstNonZero(rows, '%')
-                        if (r !== null)
-                            rowpercent2px = pxrows[r].numeric / rows[r].numeric;
-                    }
-                    rowStart = getRowBegin(row-1);
-                    rowEnd = getRowEnd(row+1);
-                }
-
-                if (isv) {
-                    let prop = grid.style[columnPropName];
-                    if (prop) cols = parse(prop);
-
-                    prop = window.getComputedStyle(grid)[columnPropName];
-                    if (prop) pxcols = parse(prop);
-                    
-                    colOffset1 = mouseX - gridLeft - getColBegin(col);
-                    colOffset2 = pxcols[col].numeric - colOffset1;
-                    colfrs = cols.filter(c => c.type === 'fr')
-                    colpercents = cols.filter(c => c.type === '%')
-                    if (colfrs.length) {
-                        let c = firstNonZero(cols, 'fr')
-                        if (c !== null)
-                            colfr2px = pxcols[c].numeric / cols[c].numeric;
-                    }
-                    if (colpercents.length) {
-                        let c = firstNonZero(cols, '%')
-                        if (c !== null)
-                            colpercent2px = pxcols[c].numeric / cols[c].numeric;
-                    }
-                    colStart = getColBegin(col-1);
-                    colEnd = getColEnd(col+1);
-                }
-            }
-
-            const startDrag = (e) => {
-                if (!resizable) return
-                if ('button' in e && e.button !== 0)
-                    return
-                e.preventDefault();
-                initDrag(e);
-                dragging = true;
-                window.addEventListener('mouseup', stopDrag);
-                window.addEventListener('touchend', stopDrag);
-                window.addEventListener('touchcancel', stopDrag);
-                window.addEventListener('mousemove', drag);
-                window.addEventListener('touchmove', drag);
-
-                grid.addEventListener('selectstart', NOOP);
-                grid.addEventListener('dragstart', NOOP);
-
-                grid.style.userSelect = 'none';
-                grid.style.webkitUserSelect = 'none';
-                grid.style.MozUserSelect = 'none';
-                grid.style.pointerEvents = 'none';
-                showBar();
-            }
-
-            const drag = e => {
-                if (ish) {
-                    let mouseY = getMouseY(e);
-                    const minPos = gridTop + rowStart + rowOffset1;
-                    const maxPos = gridTop + rowEnd - rowOffset2;
-                    if (mouseY < minPos) mouseY = minPos;
-                    if (mouseY > maxPos) mouseY = maxPos;
-                    setRowSize(row-1, mouseY-minPos);
-                    setRowSize(row+1, maxPos-mouseY);
-                    grid.style[rowPropName] = unparse(rows);
-                }
-                if (isv) {
-                    let mouseX = getMouseX(e);
-                    const minPos = gridLeft + colStart + colOffset1;
-                    const maxPos = gridLeft + colEnd - colOffset2;
-                    if (mouseX < minPos) mouseX = minPos;
-                    if (mouseX > maxPos) mouseX = maxPos;
-                    setColSize(col-1, mouseX-minPos);
-                    setColSize(col+1, maxPos-mouseX);
-                    grid.style[columnPropName] = unparse(cols);
-                }
-            }
-
-            const stopDrag = () => {
-                dragging = false;
-                window.removeEventListener('mouseup', stopDrag);
-                window.removeEventListener('touchend', stopDrag);
-                window.removeEventListener('touchcancel', stopDrag);
-                window.removeEventListener('mousemove', drag);
-                window.removeEventListener('touchmove', drag);
-
-                grid.removeEventListener('selectstart', NOOP);
-                grid.removeEventListener('dragstart', NOOP);
-
-                grid.style.userSelect = '';
-                grid.style.webkitUserSelect = '';
-                grid.style.MozUserSelect = '';
-                grid.style.pointerEvents = '';
-                hideBar();
-            }
-        </script>)
+            grid.style.userSelect = '';
+            grid.style.webkitUserSelect = '';
+            grid.style.MozUserSelect = '';
+            grid.style.pointerEvents = '';
+            setHide();
+        }
+    </script>
 
 
 if __name__ == '__main__':
