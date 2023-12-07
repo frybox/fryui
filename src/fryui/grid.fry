@@ -3,9 +3,14 @@ from fryhcs import Element
 col_prop_name = 'grid-template-columns'
 row_prop_name = 'grid-template-rows'
 
-def Grid(columns=[], rows=[], resizable=False, children=[]):
+def Grid(columns=[], rows=[], resizable=True, children=[]):
     if not columns or not rows:
         raise RuntimeError("'columns' and 'rows' must be specified for Grid.")
+
+    if isinstance(columns, str):
+        columns = columns.split(' ')
+    if isinstance(rows, str):
+        rows = rows.split(' ')
 
     if len(columns)*len(rows) < len(children):
         raise RuntimeError(f"Too many children({len(children)}) specified for grid of {len(columns)} columns and {len(rows)} rows.")
@@ -76,40 +81,31 @@ def Grid(columns=[], rows=[], resizable=False, children=[]):
       gutters.forEach(g => effect(()=>g.isShow.value ? showLine(g) : hideLine(g)));
     </script>
 
+def get_height(element):
+    if isinstance(element, Element):
+        return element.props.pop('height', None)
+    return None
 
-def HSplit(resizable=False, children=[]):
+def get_width(element):
+    if isinstance(element, Element):
+        return element.props.pop('width', None)
+    return None
+
+def HSplit(resizable=True, children=[]):
     newchildren = []
+    rows = []
     nrow = len(children)*2-1
     ich = 0
     for row in range(0, nrow):
         if row%2 == 0:
             newchildren.append(children[ich])
+            rows.append(get_height(children[ich]) or '1fr')
             ich += 1
         else:
             newchildren.append(<Gutter row nrow resizable />)
+            rows.append('1px')
     gridprop = {
-        row_prop_name: ' 1px '.join('1fr' for x in range(len(children))),
-    }
-
-    <template>
-      <div grid h-full style={gridprop} ref=(grid)>
-        {newchildren}
-      </div>
-    </template>
-
-
-def VSplit(resizable=False, children=[]):
-    newchildren = []
-    ncol = len(children)*2-1
-    ich = 0
-    for col in range(0, ncol):
-        if col%2 == 0:
-            newchildren.append(children[ich])
-            ich += 1
-        else:
-            newchildren.append(<Gutter col ncol resizable />)
-    gridprop = {
-        col_prop_name: ' 1px '.join('1fr' for x in range(len(children))),
+        row_prop_name: ' '.join(rows),
     }
 
     <template>
@@ -119,15 +115,31 @@ def VSplit(resizable=False, children=[]):
     </template>
 
 
-def Pane(min='0px', max='99999px', children=[], **props):
+def VSplit(resizable=True, children=[]):
+    newchildren = []
+    cols = []
+    ncol = len(children)*2-1
+    ich = 0
+    for col in range(0, ncol):
+        if col%2 == 0:
+            newchildren.append(children[ich])
+            cols.append(get_width(children[ich]) or '1fr')
+            ich += 1
+        else:
+            newchildren.append(<Gutter col ncol resizable />)
+            cols.append('1px')
+    gridprop = {
+        col_prop_name: ' '.join(cols),
+    }
+
     <template>
-      <div {**props}>
-        {children}
+      <div grid h-full style={gridprop}>
+        {newchildren}
       </div>
     </template>
 
 
-def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=False):
+def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True):
     ish = row%2 == 1
     isv = col%2 == 1
     if ish and (row <= 0 or row >= nrow-1):
@@ -135,26 +147,28 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=False):
     if isv and (col <= 0 or col >= ncol-1):
         raise RuntimeError(f"Invalid gutter col: {col}")
     if ish and isv:
-        style = ['cursor-move']
+        cursor = 'cursor-move'
     elif ish:
-        style = ['cursor-ns-resize']
+        cursor = 'cursor-ns-resize'
     elif isv:
-        style = ['cursor-ew-resize']
+        cursor = 'cursor-ew-resize'
 
     if not resizable:
         style = []
+    else:
+        style = [cursor]
 
     <template>
         <div ref=(el) @mouseenter=(setShow) @mouseleave=(setHide)
              @mousedown=(startDrag) @touchstart=(startDrag)
-             bg-gray-300 relative>
+             bg-hex-414141 relative>
           <div ref=(bar) absolute
                bg-none transition-colors duration-300 ease-in-out
                z-100 {*style}>
           </div>
         </div>
     </template>
-    <script ish isv col row ncol nrow resizable>
+    <script ish isv cursor col row ncol nrow resizable>
         import { signal } from 'fryhcs';
 
         let dragging = false;
@@ -365,6 +379,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=False):
             window.addEventListener('touchcancel', stopDrag);
             window.addEventListener('mousemove', drag);
             window.addEventListener('touchmove', drag);
+            document.documentElement.classList.add(cursor)
 
             grid.addEventListener('selectstart', NOOP);
             grid.addEventListener('dragstart', NOOP);
@@ -406,6 +421,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=False):
             window.removeEventListener('touchcancel', stopDrag);
             window.removeEventListener('mousemove', drag);
             window.removeEventListener('touchmove', drag);
+            document.documentElement.classList.remove(cursor)
 
             grid.removeEventListener('selectstart', NOOP);
             grid.removeEventListener('dragstart', NOOP);
