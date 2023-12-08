@@ -30,13 +30,13 @@ def Grid(columns=[], rows=[], resizable=True, children=[]):
                     newchildren.append(children[ich])
                     ich += 1
                 else:
-                    newchildren.append(<Gutter refall=(gutters) col row ncol nrow resizable />)
+                    newchildren.append(<Gutter refall=(gutters) {col} {row} {ncol} {nrow} {resizable} />)
         else:
             for col in range(0, ncol):
                 if col%2 == 0:
-                    newchildren.append(<Gutter refall=(gutters) col row ncol nrow resizable />)
+                    newchildren.append(<Gutter refall=(gutters) {col} {row} {ncol} {nrow} {resizable} />)
                 else:
-                    newchildren.append(<Gutter refall=(gutters) col row ncol nrow resizable />)
+                    newchildren.append(<Gutter refall=(gutters) {col} {row} {ncol} {nrow} {resizable} />)
     gridprop = {
         col_prop_name: ' 1px '.join(columns),
         row_prop_name: ' 1px '.join(rows),
@@ -48,7 +48,7 @@ def Grid(columns=[], rows=[], resizable=True, children=[]):
       </div>
     </template>
 
-    <script ncol nrow resizable>
+    <script {ncol} {nrow} {resizable}>
       import { effect } from "fryhcs";
 
       const gutterMap = {}
@@ -102,7 +102,7 @@ def HSplit(resizable=True, children=[]):
             rows.append(get_height(children[ich]) or '1fr')
             ich += 1
         else:
-            newchildren.append(<Gutter row nrow resizable />)
+            newchildren.append(<Gutter {row} {nrow} {resizable} />)
             rows.append('1px')
     gridprop = {
         row_prop_name: ' '.join(rows),
@@ -126,7 +126,7 @@ def VSplit(resizable=True, children=[]):
             cols.append(get_width(children[ich]) or '1fr')
             ich += 1
         else:
-            newchildren.append(<Gutter col ncol resizable />)
+            newchildren.append(<Gutter {col} {ncol} {resizable} />)
             cols.append('1px')
     gridprop = {
         col_prop_name: ' '.join(cols),
@@ -168,7 +168,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True):
           </div>
         </div>
     </template>
-    <script ish isv cursor col row ncol nrow resizable>
+    <script {ish} {isv} {cursor} {col} {row} {ncol} {nrow} {resizable}>
         import { signal } from 'fryhcs';
 
         let dragging = false;
@@ -439,7 +439,7 @@ if __name__ == '__main__':
     from fryhcs import render
     columns = ['1fr', '1fr', '1fr']
     rows = ['1fr', '1fr']
-    print(render(<Grid columns={columns} rows={rows} resizable={True}>
+    print(render(<Grid {columns} {rows}>
                    <div> </div>
                    <div> </div>
                    <div> </div>

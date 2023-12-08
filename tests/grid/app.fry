@@ -14,7 +14,7 @@ def index():
             <Center>B</Center>
             <Center>C</Center>
           </HSplit>
-          <VSplit resizable={True}>
+          <VSplit>
             <Center width="150px">A</Center>
             <Center>C</Center>
           </VSplit>
