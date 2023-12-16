@@ -1,0 +1,23 @@
+
+colors = {
+    'primary':            'oklch(var(--p))',
+    'primary-content':    'oklch(var(--pc))',
+    'secondary':          'oklch(var(--s))',
+    'secondary-content':  'oklch(var(--sc))',
+    'accent':             'oklch(var(--a))',
+    'accent-content':     'oklch(var(--ac))',
+    'neutral':            'oklch(var(--n))',
+    'neutral-content':    'oklch(var(--nc))',
+    'base-100':           'oklch(var(--b1))',
+    'base-200':           'oklch(var(--b2))',
+    'base-300':           'oklch(var(--b3))',
+    'base-content':       'oklch(var(--bc))',
+    'info':               'oklch(var(--in))',
+    'info-content':       'oklch(var(--inc))',
+    'success':            'oklch(var(--su))',
+    'success-content':    'oklch(var(--suc))',
+    'warning':            'oklch(var(--wa))',
+    'warning-content':    'oklch(var(--wac))',
+    'error':              'oklch(var(--er))',
+    'error-content':      'oklch(var(--erc))',
+}

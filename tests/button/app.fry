@@ -1,0 +1,48 @@
+from fryhcs import Element, html
+from flask import Flask
+from fryui import Button
+
+app = Flask(__name__)
+
+@app.get('/')
+def index():
+    return html(Main, title="button test")
+
+def Main():
+    <template>
+      <div flex flex-col justify-center items-center text-center>
+        <div flex>
+          <p>基本类型</p>
+          <Button primary>
+            Primary
+          </Button>
+          <Button secondary>
+            Secondary
+          </Button>
+          <Button accent>
+            Accent
+          </Button>
+          <Button neutral>
+            Neutral
+          </Button>
+          <Button success>
+            Success
+          </Button>
+          <Button info>
+            Info
+          </Button>
+          <Button warning>
+            Warning
+          </Button>
+          <Button error>
+            Error
+          </Button>
+          <Button ghost>
+            Ghost
+          </Button>
+          <Button link>
+            Link
+          </Button>
+        </div>
+      </div>
+    </template>
