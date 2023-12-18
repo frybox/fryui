@@ -2,28 +2,29 @@ from fryhcs import Element
 
 
 def Button (
-    neutral   = False,
-    primary   = False,
-    secondary = False,
-    accent    = False,
-    info      = False,
-    success   = False,
-    warning   = False,
-    error     = False,
-    ghost     = False,
-    link      = False,
-    outline   = False,
-    active    = False,
-    disabled  = False,
-    lg        = False,
-    md        = False,
-    sm        = False,
-    xs        = False,
-    wide      = False,
-    block     = False,
-    circle    = False,
-    square    = False,
-    children  = ['Button'],
+    neutral    = False,
+    primary    = False,
+    secondary  = False,
+    accent     = False,
+    info       = False,
+    success    = False,
+    warning    = False,
+    error      = False,
+    ghost      = False,
+    link       = False,
+    outline    = False,
+    active     = False,
+    disabled   = False,
+    lg         = False,
+    md         = False,
+    sm         = False,
+    xs         = False,
+    responsive = False,
+    wide       = False,
+    block      = False,
+    circle     = False,
+    square     = False,
+    children   = ['Button'],
 ):
     if (neutral, primary, secondary, accent,
         info, success, warning, error, ghost,
@@ -31,7 +32,7 @@ def Button (
         raise RuntimeError("Conflict primary types of Button")
     if (outline, ghost, link).count(True) > 1:
         raise RuntimeError("Conflict outline types of Button")
-    if (lg, md, sm, xs).count(True) > 1:
+    if (lg, md, sm, xs, responsive).count(True) > 1:
         raise RuntimeError("Conflict size types of Button")
     if (circle, square, wide, block).count(True) > 1:
         raise RuntimeError("Conflict shape types of Button")
@@ -56,6 +57,12 @@ def Button (
         size = ['h-12', 'min-h-3rem', 'text-sm', ]
     elif lg:
         size = ['h-16', 'min-h-4rem', 'text-lg', ]
+    elif responsive:
+        size = ['h-6', 'min-h-1.5rem', 'text-xs',
+                'sm:h-8', 'sm:min-h-2rem', 'sm:text-sm',
+                'md:h-12', 'md:min-h-3rem', 'md:text-sm',
+                'lg:h-16', 'lg:min-h-4rem', 'lg:text-lg',
+               ]
     else:
         size = ['h-12', 'min-h-3rem', 'text-sm', ]
 
