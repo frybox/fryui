@@ -3,6 +3,7 @@ from flask import Flask
 from fryui import Button
 
 app = Flask(__name__)
+app.config['FRYHCS_PLUGINS'] = ['fryui.plugin']
 
 @app.get('/')
 def index():
@@ -11,38 +12,75 @@ def index():
 def Main():
     <template>
       <div flex flex-col justify-center items-center text-center>
-        <div flex>
-          <p>基本类型</p>
-          <Button primary>
-            Primary
-          </Button>
-          <Button secondary>
-            Secondary
-          </Button>
-          <Button accent>
-            Accent
-          </Button>
-          <Button neutral>
-            Neutral
-          </Button>
-          <Button success>
-            Success
-          </Button>
-          <Button info>
-            Info
-          </Button>
-          <Button warning>
-            Warning
-          </Button>
-          <Button error>
-            Error
-          </Button>
-          <Button ghost>
-            Ghost
-          </Button>
-          <Button link>
-            Link
-          </Button>
+        <div>
+          <h1 mt-20 mb-10 text-xl text-primary>基本类型</h1>
+          <div flex gap-3>
+            <Button primary>
+              Primary
+            </Button>
+            <Button secondary>
+              Secondary
+            </Button>
+            <Button accent>
+              Accent
+            </Button>
+            <Button neutral>
+              Neutral
+            </Button>
+            <Button success>
+              Success
+            </Button>
+            <Button info>
+              Info
+            </Button>
+            <Button warning>
+              Warning
+            </Button>
+            <Button error>
+              Error
+            </Button>
+            <Button ghost>
+              Ghost
+            </Button>
+            <Button link>
+              Link
+            </Button>
+          </div>
+        </div>
+        <div>
+          <h1 mt-20 mb-10 text-xl text-primary>轮廓类型</h1>
+          <div flex gap-3>
+            <Button primary outline>
+              Primary
+            </Button>
+            <Button secondary outline>
+              Secondary
+            </Button>
+            <Button accent outline>
+              Accent
+            </Button>
+            <Button neutral outline>
+              Neutral
+            </Button>
+            <Button success outline>
+              Success
+            </Button>
+            <Button info outline>
+              Info
+            </Button>
+            <Button warning outline>
+              Warning
+            </Button>
+            <Button error outline>
+              Error
+            </Button>
+            <Button ghost>
+              Ghost
+            </Button>
+            <Button link>
+              Link
+            </Button>
+          </div>
         </div>
       </div>
     </template>

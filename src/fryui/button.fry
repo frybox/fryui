@@ -148,41 +148,61 @@ def Button (
     else:
         if primary:
             color = ['bg-primary', 'border-primary', 'text-primary-content',
-                     'outline-primary', 'no-underline', ]
+                     'outline-primary', 'no-underline',
+                     'hover:bg-primary-focus', 'hover:boder-primary-focus',
+                    ]
         elif secondary:
             color = ['bg-secondary', 'border-secondary', 'text-secondary-content',
-                     'outline-secondary', 'no-underline', ]
+                     'outline-secondary', 'no-underline',
+                     'hover:bg-secondary-focus', 'hover:boder-secondary-focus',
+                    ]
         elif accent:
             color = ['bg-accent', 'border-accent', 'text-accent-content',
-                     'outline-accent', 'no-underline', ]
+                     'outline-accent', 'no-underline',
+                     'hover:bg-accent-focus', 'hover:boder-accent-focus',
+                    ]
         elif neutral:
             color = ['bg-neutral', 'border-neutral', 'text-neutral-content',
-                     'outline-neutral', 'no-underline', ]
+                     'outline-neutral', 'no-underline',
+                     'hover:bg-neutral-focus', 'hover:boder-neutral-focus',
+                    ]
         elif info:
             color = ['bg-info', 'border-info', 'text-info-content',
-                     'outline-info', 'no-underline', ]
+                     'outline-info', 'no-underline',
+                     'hover:bg-info-focus', 'hover:boder-info-focus',
+                    ]
         elif success:
             color = ['bg-success', 'border-success', 'text-success-content',
-                     'outline-success', 'no-underline', ]
+                     'outline-success', 'no-underline',
+                     'hover:bg-success-focus', 'hover:boder-success-focus',
+                    ]
         elif warning:
             color = ['bg-warning', 'border-warning', 'text-warning-content',
-                     'outline-warning', 'no-underline', ]
+                     'outline-warning', 'no-underline',
+                     'hover:bg-warning-focus', 'hover:boder-warning-focus',
+                    ]
         elif error:
             color = ['bg-error', 'border-error', 'text-error-content',
-                     'outline-error', 'no-underline', ]
+                     'outline-error', 'no-underline',
+                     'hover:bg-error-focus', 'hover:boder-error-focus',
+                    ]
         elif ghost:
             color = ['border', 'border-transparent', 'bg-transparent',
                      'text-current', 'shadow-none', 'outline-current',
                      'hover:border-tranparent', 'hover:bg-base-content/20',
-                     'no-underline',]
+                     'no-underline',
+                    ]
         elif link:
             color = ['text-primary', 'border-transparent', 'bg-transparent',
                      'underline', 'shadow-none', 'outline-current',
                      'hover:border-transparent', 'hover:bg-transparent',
-                     'hover:underline',]
+                     'hover:underline',
+                    ]
         else:
             color = ['bg-base-200', 'border-base-200', 'text-base-content',
-                     'outline-base-content', 'no-underline', ]
+                     'outline-base-content', 'no-underline',
+                     'hover:bg-base-300', 'hover:boder-base-300',
+                    ]
     styles = base + size + shape + color
 
     <template>
