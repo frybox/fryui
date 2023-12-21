@@ -30,9 +30,6 @@ def Main():
             <Button accent>
               Accent
             </Button>
-            <Button neutral>
-              Neutral
-            </Button>
             <Button success>
               Success
             </Button>
@@ -64,9 +61,6 @@ def Main():
             </Button>
             <Button accent outline>
               Accent
-            </Button>
-            <Button neutral outline>
-              Neutral
             </Button>
             <Button success outline>
               Success

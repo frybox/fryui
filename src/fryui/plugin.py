@@ -1,119 +1,107 @@
-from .color import is_dark, content_color, focus_color, dump
+from .color import dump
+from fryhcs.css.color import radix_colors as radix
 
-def name_to_selector(name):
-    def convert(theme):
-        if theme == 'default':
-            return 'html'
-        return f'html[data-theme="{theme}"]'
-    names = [convert(n.strip()) for n in name.split(',')]
-    return ', '.join(names)
+radix_colored_regular = set(['tomato', 'red', 'ruby', 'crimson', 'pink', 'plum', 'purple', 'violet', 'iris', 'indigo', 'blue', 'cyan', 'teal', 'jade', 'green', 'grass', 'brown', 'orange' ])
+radix_colored_bright = set(['sky', 'mint', 'lime', 'yellow', 'amber'])
+radix_colored_metal = set(['gold', 'bronze'])
 
-def value_to_style(value):
-    style = {}
-    primary   = value['primary']
-    secondary = value['secondary']
-    accent    = value['accent']
-    neutral   = value['neutral']
-    base100   = value['base-100']
-    info      = value['info']
-    success   = value['success']
-    warning   = value['warning']
-    error     = value['error']
-    if is_dark(base100):
-        style['color-scheme'] = 'dark'
+radix_colored_colors = radix_colored_regular.union(radix_colored_bright, radix_colored_metal)
+
+radix_base_pure = set(['gray'])
+radix_base_desaturated = set(['mauve', 'slate', 'sage', 'olive', 'sand'])
+
+radix_base_colors = radix_base_pure.union(radix_base_desaturated)
+
+radix_colors = radix_colored_colors.union(radix_base_colors)
+
+def get_base_color(primary):
+    if primary in ('tomato', 'red', 'ruby', 'crimson', 'pink', 'plum', 'purple', 'violet',):
+        return 'mauve'
+    elif primary in ('iris', 'indigo', 'blue', 'sky', 'cyan',):
+        return 'slate'
+    elif primary in ('teal', 'jade', 'mint', 'green',):
+        return 'sage'
+    elif primary in ('grass', 'lime',):
+        return 'olive'
+    elif primary in ('yellow', 'amber', 'orange', 'brown', 'gold', 'bronze',):
+        return 'sand'
     else:
-        style['color-scheme'] = 'light'
-    style['--p']   = dump(primary)
-    style['--pc']  = dump(content_color(primary))
-    style['--pf']  = dump(focus_color(primary))
-    style['--s']   = dump(secondary)
-    style['--sc']  = dump(content_color(secondary))
-    style['--sf']  = dump(focus_color(secondary))
-    style['--a']   = dump(accent)
-    style['--ac']  = dump(content_color(accent))
-    style['--af']  = dump(focus_color(accent))
-    style['--n']   = dump(neutral)
-    style['--nc']  = dump(content_color(neutral))
-    style['--nf']  = dump(focus_color(neutral))
-    style['--b1']  = dump(base100)
-    style['--b2']  = dump(focus_color(base100))
-    style['--b3']  = dump(focus_color(focus_color(base100)))
-    style['--bc']  = dump(content_color(base100))
-    style['--in']  = dump(info)
-    style['--inc'] = dump(content_color(info))
-    style['--inf'] = dump(focus_color(info))
-    style['--su']  = dump(success)
-    style['--suc'] = dump(content_color(success))
-    style['--suf'] = dump(focus_color(success))
-    style['--wa']  = dump(warning)
-    style['--wac'] = dump(content_color(warning))
-    style['--waf'] = dump(focus_color(warning))
-    style['--er']  = dump(error)
-    style['--erc'] = dump(content_color(error))
-    style['--erf'] = dump(focus_color(error))
-    return style
+        return 'gray'
 
-def base_css():
-    base = {}
-    for name, value in themes.items():
-        name = name_to_selector(name)
-        value = value_to_style(value)
-        base[name] = value
-    return base
+def get_content_color(color):
+    content_colors = {
+        'sky': radix['slate-12'],
+        'mint': radix['sage-12'],
+        'lime': radix['olive-12'],
+        'yellow': radix['sand-12'],
+        'amber': radix['sand-12'],
+    }
+    if color in content_colors:
+        return content_colors[color]
+    if color in radix_colored_colors:
+        return 'white'
+    raise RuntimeError("Only support colored color step 9 content")
 
-themes = {
-    'light, default': {
-        'primary':   '#4a00ff',
-        'secondary': '#ff00d3',
-        'accent':    '#00d7c0',
-        'neutral':   '#2b3440',
-        'base-100':  '#ffffff',
-        'info':      '#00b6ff',
-        'success':   '#00a96e',
-        'warning':   '#ffbe00',
-        'error':     '#ff5861',
-    },
-    'dark': {
-        'primary':   '#7480ff',
-        'secondary': '#ff52d9',
-        'accent':    '#00cdb8',
-        'neutral':   '#2a323c',
-        'base-100':  '#1d232a',
-        'info':      '#00b6ff',
-        'success':   '#00a96e',
-        'warning':   '#ffbe00',
-        'error':     '#ff5861',
-    },
+
+theme = {
+    'primary':   'blue',
+    'secondary': 'green',
+    'accent':    'grass',
+    'info':      'sky',
+    'success':   'jade',
+    'warning':   'yellow',
+    'error':     'tomato',
 }
 
-def colors():
-    return {
-        'primary':            'rgb(var(--p))',
-        'primary-content':    'rgb(var(--pc))',
-        'primary-focus':      'rgb(var(--pf))',
-        'secondary':          'rgb(var(--s))',
-        'secondary-content':  'rgb(var(--sc))',
-        'secondary-focus':    'rgb(var(--sf))',
-        'accent':             'rgb(var(--a))',
-        'accent-content':     'rgb(var(--ac))',
-        'accent-focus':       'rgb(var(--af))',
-        'neutral':            'rgb(var(--n))',
-        'neutral-content':    'rgb(var(--nc))',
-        'neutral-focus':      'rgb(var(--nf))',
-        'base-100':           'rgb(var(--b1))',
-        'base-200':           'rgb(var(--b2))',
-        'base-300':           'rgb(var(--b3))',
-        'base-content':       'rgb(var(--bc))',
-        'info':               'rgb(var(--in))',
-        'info-content':       'rgb(var(--inc))',
-        'info-focus':         'rgb(var(--inf))',
-        'success':            'rgb(var(--su))',
-        'success-content':    'rgb(var(--suc))',
-        'success-focus':      'rgb(var(--suf))',
-        'warning':            'rgb(var(--wa))',
-        'warning-content':    'rgb(var(--wac))',
-        'warning-focus':      'rgb(var(--waf))',
-        'error':              'rgb(var(--er))',
-        'error-content':      'rgb(var(--erc))',
-        'error-focus':        'rgb(var(--erf))',
+def base_css(theme=theme):
+    base, colored = check_theme(theme)
+    common_style = {}
+    light_style = {
+        'color-scheme': 'light',
+        '--base':         dump(radix[f'{base}-1']),
+        '--base-content': dump(radix[f'{base}-12']),
     }
+    dark_style = {
+        'color-scheme': 'dark',
+        '--base':         dump(radix[f'{base}-dark-1']),
+        '--base-content': dump(radix[f'{base}-dark-12']),
+    }
+    for name, value in colored.items():
+        common_style[f'--{name}'] = dump(radix[f'{value}-9'])
+        common_style[f'--{name}-content'] = dump(get_content_color(value))
+    allcolors = {'base':base, **colored}
+    for name, value in allcolors.items():
+        for i in range(1, 13):
+            light_style[f'--{name}-{i}'] = dump(radix[f'{value}-{i}'])
+            light_style[f'--{name}-a{i}'] = dump(radix[f'{value}-a{i}'])
+            dark_style[f'--{name}-{i}'] = dump(radix[f'{value}-dark-{i}'])
+            dark_style[f'--{name}-a{i}'] = dump(radix[f'{value}-dark-a{i}'])
+    return {
+        ':root': common_style,
+        ':root, [data-scheme="light"]': light_style,
+        '[data-scheme="dark"]': dark_style,
+    }
+
+
+def check_theme(theme):
+    curr = dict(theme)
+    if not all(n in semantic_names for n in curr.keys()):
+        raise RuntimeError("theme should only have one of the 8 semantic names")
+    base = curr.pop('base', None)
+    if 'primary' not in curr:
+        raise RuntimeError("'primary' should be in theme")
+    if not all(v in radix_colored_colors for v in curr.values()):
+        raise RuntimeError("all semantic colors other than 'base' should be one of radix non-gray colors")
+    if not base:
+        base = get_base_color(curr['primary'])
+    elif base not in radix_base_colors:
+        raise RuntimeError("'base' color should be one of radix gray colors")
+    return base, curr
+
+semantic_names = set(['primary', 'secondary', 'accent', 'base', 'info', 'success', 'warning', 'error'])
+
+def colors():
+    suffixes = ['', '-content'] + [f'-{i}' for i in range(1, 13)] + [f'-a{i}' for i in range(1, 13)]
+    return {f'{name}{suffix}': f'rgb(var(--{name}{suffix}))'
+            for suffix in suffixes
+            for name  in semantic_names}
