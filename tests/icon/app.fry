@@ -1,0 +1,42 @@
+from fryhcs import Element, html
+from flask import Flask
+from fryui import Icon, ShuffleIcon, Half2Icon, CornerTopLeftIcon, FilePlusIcon, ImageIcon, EyeNoneIcon
+from fryui import Button
+
+app = Flask(__name__)
+app.config['FRYHCS_PLUGINS'] = ['fryui.plugin']
+
+@app.get('/')
+def index():
+    return html(Main, title="icon test")
+
+def Main():
+    <template>
+      <div flex flex-col justify-center items-center text-center>
+        <div>
+          <h1 mt-20 mb-10 text-xl text-primary>命名图标</h1>
+          <div flex gap-3>
+            <Button primary xs outline>
+              Shuffle
+              <ShuffleIcon class="fill-primary hover:fill-primary-contrast" />
+            </Button>
+            <Half2Icon />
+            <CornerTopLeftIcon />
+            <FilePlusIcon />
+            <ImageIcon />
+            <EyeNoneIcon />
+          </div>
+        </div>
+        <div>
+          <h1 mt-20 mb-10 text-xl text-primary>Icon+type图标</h1>
+          <div flex gap-3>
+            <Icon type='shuffle' />
+            <Icon type="half-2" />
+            <Icon type="corner-top-left" />
+            <Icon type='file-plus' />
+            <Icon type='image' />
+            <Icon type='eye-none' />
+          </div>
+        </div>
+      </div>
+    </template>
