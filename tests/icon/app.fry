@@ -16,11 +16,13 @@ def Main():
         <div>
           <h1 mt-20 mb-10 text-xl text-primary>命名图标</h1>
           <div flex gap-3>
-            <Button primary xs outline>
+            <Button primary>
               Shuffle
-              <ShuffleIcon class="fill-primary hover:fill-primary-contrast" />
+              <ShuffleIcon class="h-5 w-5"/>
             </Button>
-            <Half2Icon />
+            <Button outline secondary>
+              <Half2Icon class="h-6 w-6"/>
+            </Button>
             <CornerTopLeftIcon />
             <FilePlusIcon />
             <ImageIcon />
@@ -32,8 +34,12 @@ def Main():
           <div flex gap-3>
             <Icon type='shuffle' />
             <Icon type="half-2" />
-            <Icon type="corner-top-left" />
-            <Icon type='file-plus' />
+            <Button outline accent>
+              <Icon type="corner-top-left" class="h-7 w-7" />
+            </Button>
+            <Button outline accent>
+              <Icon type='file-plus' class="h-8 w-8" />
+            </Button>
             <Icon type='image' />
             <Icon type='eye-none' />
           </div>
