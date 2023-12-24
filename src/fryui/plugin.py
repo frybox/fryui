@@ -40,7 +40,7 @@ def get_contrast_color(color):
         return contrast_colors[color]
     if color in radix_colored_colors:
         return 'white'
-    raise RuntimeError("Only support colored color step 9 content")
+    raise RuntimeError("Only support contrast color of colored color step 9")
 
 
 theme = {

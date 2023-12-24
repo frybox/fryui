@@ -41,7 +41,9 @@ def Button (
             'text-center',
             'disabled:pointer-events-none',
             'gap-2', 'font-semibold', 
+            'transition-transform',
             'duration-200', 'ease-out',
+            'active:scale-95',
             'border',
             'shadow-sm',
            ]
@@ -111,104 +113,82 @@ def Button (
             color += ['text-primary', 'outline-primary',
                       'hover:text-primary-contrast', 'hover:bg-primary',
                       'hover:border-primary',
-                      'active:text-primary-contrast', 'active:bg-primaryx',
-                      'active:border-primaryx',
                      ]
         elif secondary:
             color += ['text-secondary', 'outline-secondary',
                       'hover:text-secondary-contrast', 'hover:bg-secondary',
                       'hover:border-secondary',
-                      'active:text-secondary-contrast', 'active:bg-secondaryx',
-                      'active:border-secondaryx',
                      ]
         elif accent:
             color += ['text-accent', 'outline-accent',
                       'hover:text-accent-contrast', 'hover:bg-accent',
                       'hover:border-accent',
-                      'active:text-accent-contrast', 'active:bg-accentx',
-                      'active:border-accentx',
                      ]
         elif info:
             color += ['text-info', 'outline-info',
                       'hover:text-info-contrast', 'hover:bg-info', 'hover:border-info',
-                      'active:text-info-contrast', 'active:bg-infox',
-                      'active:border-infox',
                      ]
         elif success:
             color += ['text-success', 'outline-success',
                       'hover:text-success-contrast', 'hover:bg-success',
                       'hover:border-success',
-                      'active:text-success-contrast', 'active:bg-successx',
-                      'active:border-successx',
                      ]
         elif warning:
             color += ['text-warning', 'outline-warning',
                       'hover:text-warning-contrast', 'hover:bg-warning',
                       'hover:border-warning',
-                      'active:text-warning-contrast', 'active:bg-warningx',
-                      'active:border-warningx',
                      ]
         elif error:
             color += ['text-error', 'outline-error',
                       'hover:text-error-contrast', 'hover:bg-error',
                       'hover:border-error',
-                      'active:text-error-contrast', 'active:bg-errorx',
-                      'active:border-errorx',
                      ]
         else:
             color = ['text-gray-tx', 'outline-gray-tx',
                      'hover:bg-gray-bgx', 'hover:border-gray-bgx',
                      'hover:text-gray-tx',
-                      'active:text-gray-tx', 'active:bg-gray-el',
-                      'active:border-gray-el',
                     ]
     else:
         if primary:
             color = ['bg-primary', 'border-primary', 'text-primary-content',
                      'outline-primary', 'no-underline',
                      'hover:bg-primaryx', 'hover:boder-primaryx',
-                     'active:bg-primary-ta', 'active:boder-primary-ta',
                     ]
         elif secondary:
             color = ['bg-secondary', 'border-secondary', 'text-secondary-content',
                      'outline-secondary', 'no-underline',
                      'hover:bg-secondaryx', 'hover:boder-secondaryx',
-                     'active:bg-secondary-ta', 'active:boder-secondary-ta',
                     ]
         elif accent:
             color = ['bg-accent', 'border-accent', 'text-accent-content',
                      'outline-accent', 'no-underline',
                      'hover:bg-accentx', 'hover:boder-accentx',
-                     'active:bg-accent-ta', 'active:boder-accent-ta',
                     ]
         elif info:
             color = ['bg-info', 'border-info', 'text-info-content',
                      'outline-info', 'no-underline',
                      'hover:bg-infox', 'hover:boder-infox',
-                     'active:bg-info-ta', 'active:boder-info-ta',
                     ]
         elif success:
             color = ['bg-success', 'border-success', 'text-success-content',
                      'outline-success', 'no-underline',
                      'hover:bg-successx', 'hover:boder-successx',
-                     'active:bg-success-ta', 'active:boder-success-ta',
                     ]
         elif warning:
             color = ['bg-warning', 'border-warning', 'text-warning-content',
                      'outline-warning', 'no-underline',
                      'hover:bg-warningx', 'hover:boder-warningx',
-                     'active:bg-warning-ta', 'active:boder-warning-ta',
                     ]
         elif error:
             color = ['bg-error', 'border-error', 'text-error-content',
                      'outline-error', 'no-underline',
                      'hover:bg-errorx', 'hover:boder-errorx',
-                     'active:bg-error-ta', 'active:boder-error-ta',
                     ]
         elif ghost:
             color = ['border', 'border-transparent', 'bg-transparent',
                      'text-current', 'shadow-none', 'outline-current',
-                     'hover:border-tranparent', 'hover:bg-gray-tx/20',
+                     'hover:border-tranparent', 'hover:bg-gray-tax',
+                     'hover:text-gray-bg',
                      'no-underline',
                     ]
         elif link:
@@ -221,7 +201,6 @@ def Button (
             color = ['bg-gray-el', 'border-gray-el', 'text-gray-tx',
                      'outline-gray-tx', 'no-underline',
                      'hover:bg-gray-elx', 'hover:boder-gray-elx',
-                     'active:bg-gray-elxx', 'active:boder-gray-elxx',
                     ]
     styles = base + size + shape + color
 
