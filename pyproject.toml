@@ -16,6 +16,8 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "fryhcs",
+    "coloraide",
 ]
 
 [project.urls]

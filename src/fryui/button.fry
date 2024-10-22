@@ -206,6 +206,6 @@ def Button (
 
     <template>
       <button {*styles}>
-        {*children}
+        {children}
       </button>
     </template>

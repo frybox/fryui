@@ -7,7 +7,7 @@ app.config['FRYHCS_PLUGINS'] = ['fryui.plugin']
 
 @app.get('/')
 def index():
-    return html(Main, title="button test")
+    return html(Main, title="button test", autoreload=False)
 
 def Main():
     <template>

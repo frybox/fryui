@@ -29,11 +29,11 @@ def index():
           </Grid>
         </HSplit>
       </div>)
-    return html(grid, title="fryui")
+    return html(grid, title="fryui", autoreload=False)
 
 def Center(children=[]):
     <template>
       <div flex justify-center items-center min-w-150px min-h-0 overflow-hidden>
-        {*children}
+        {children}
       </div>
     </template>
