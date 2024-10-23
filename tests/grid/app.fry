@@ -3,12 +3,11 @@ from flask import Flask
 from fryui.grid import Grid, HSplit, VSplit
 
 app = Flask(__name__)
-app.config['FRYHCS_PLUGINS'] = ['fryui.plugin']
 
 @app.get('/')
 def index():
     grid = (
-      <div m-10 border-3 border-primary h-80vh text-base-content bg-base>
+      <div m-10 border-3 border-primary h-80vh text-primary bg-base>
         <HSplit resizable={False}>
           <HSplit>
             <Center>A</Center>

@@ -3,7 +3,6 @@ from flask import Flask
 from fryui import Button
 
 app = Flask(__name__)
-app.config['FRYHCS_PLUGINS'] = ['fryui.plugin']
 
 @app.get('/')
 def index():

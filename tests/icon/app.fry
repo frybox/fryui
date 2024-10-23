@@ -4,11 +4,10 @@ from fryui import Icon, ShuffleIcon, Half2Icon, CornerTopLeftIcon, FilePlusIcon,
 from fryui import Button
 
 app = Flask(__name__)
-app.config['FRYHCS_PLUGINS'] = ['fryui.plugin']
 
 @app.get('/')
 def index():
-    return html(Main, title="icon test")
+    return html(Main, title="icon test", autoreload=False)
 
 def Main():
     <template>
