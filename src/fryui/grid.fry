@@ -168,6 +168,35 @@ def HCenter(children, resizable=True, left=None, right=None):
     </template>
 
 
+def VCenter(children, resizable=True, top=None, bottom=None):
+    if not children or len(children) != 1:
+        raise RuntimeError("VCenter should have and only have one child.")
+    center = children[0]
+    wcenter = get_height(center) or '1fr'
+    if not top:
+        top = <div></div>
+    if not bottom:
+        bottom = <div></div>
+    wtop = get_height(top) or '1fr'
+    wbottom = get_height(bottom) or '1fr'
+    if wtop != wbottom:
+        raise RuntimeError("top and bottom elements in VCenter should have the same width")
+    gridprop = {
+        row_prop_name: ' '.join([wtop, '1px', wcenter, '1px', wbottom])
+    }
+    nrow = 5
+
+    <template>
+      <div grid h-full style={gridprop}>
+        {top}
+        <Gutter center row={1} {nrow} {resizable} />
+        {center}
+        <Gutter center row={3} {nrow} {resizable} />
+        {bottom}
+      </div>
+    </template>
+
+
 def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
     ish = row%2 == 1
     isv = col%2 == 1
@@ -207,7 +236,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
           </div>
         </div>
     </template>
-    <script {ish} {isv} {cursor} {col} {row} {ncol} {nrow} {resizable}>
+    <script {ish} {isv} {cursor} {col} {row} {ncol} {nrow} {resizable} {center}>
         import { signal } from 'fryhcs';
 
         let dragging = false;
@@ -231,6 +260,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
         let colEnd = 0;
         let rowStart = 0;
         let rowEnd = 0;
+        let contentSize = 0; // 除去gutter后的内容元素总px数，center中用
         let gridWidth, gridHeight, gridTop, gridBottom, gridLeft, gridRight;
 
         const columnPropName = 'grid-template-columns';
@@ -360,7 +390,12 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
                 if (prop) rows = parse(prop);
 
                 prop = window.getComputedStyle(grid)[rowPropName];
-                if (prop) pxrows = parse(prop);
+                if (prop) {
+                    pxrows = parse(prop);
+                    if (center) {
+                        contentSize = pxrows[0].numeric + pxrows[2].numeric + pxrows[4].numeric;
+                    }
+                }
 
                 rowOffset1 = mouseY - gridTop - getRowBegin(row);
                 rowOffset2 = pxrows[row].numeric - rowOffset1;
@@ -385,7 +420,12 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
                 if (prop) cols = parse(prop);
 
                 prop = window.getComputedStyle(grid)[columnPropName];
-                if (prop) pxcols = parse(prop);
+                if (prop) {
+                    pxcols = parse(prop);
+                    if (center) {
+                        contentSize = pxcols[0].numeric + pxcols[2].numeric + pxcols[4].numeric;
+                    }
+                }
                 
                 colOffset1 = mouseX - gridLeft - getColBegin(col);
                 colOffset2 = pxcols[col].numeric - colOffset1;
@@ -437,8 +477,23 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
                 const maxPos = gridTop + rowEnd - rowOffset2;
                 if (mouseY < minPos) mouseY = minPos;
                 if (mouseY > maxPos) mouseY = maxPos;
-                setRowSize(row-1, mouseY-minPos);
-                setRowSize(row+1, maxPos-mouseY);
+                if (center) {
+                    let sideSize = 0;
+                    let centerSize = 0;
+                    // row is 1 or row is 3
+                    if (row === 1) {
+                        sideSize = mouseY - minPos;
+                    } else {
+                        sideSize = maxPos - mouseY;
+                    }
+                    centerSize = contentSize - 2*sideSize;
+                    setRowSize(0, sideSize);
+                    setRowSize(2, centerSize);
+                    setRowSize(4, sideSize);
+                } else {
+                    setRowSize(row-1, mouseY-minPos);
+                    setRowSize(row+1, maxPos-mouseY);
+                }
                 grid.style[rowPropName] = unparse(rows);
             }
             if (isv) {
@@ -447,8 +502,23 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
                 const maxPos = gridLeft + colEnd - colOffset2;
                 if (mouseX < minPos) mouseX = minPos;
                 if (mouseX > maxPos) mouseX = maxPos;
-                setColSize(col-1, mouseX-minPos);
-                setColSize(col+1, maxPos-mouseX);
+                if (center) {
+                    let sideSize = 0;
+                    let centerSize = 0;
+                    // col is 1 or col is 3
+                    if (col === 1) {
+                        sideSize = mouseX - minPos;
+                    } else {
+                        sideSize = maxPos - mouseX;
+                    }
+                    centerSize = contentSize - 2*sideSize;
+                    setColSize(0, sideSize);
+                    setColSize(2, centerSize);
+                    setColSize(4, sideSize);
+                } else {
+                    setColSize(col-1, mouseX-minPos);
+                    setColSize(col+1, maxPos-mouseX);
+                }
                 grid.style[columnPropName] = unparse(cols);
             }
         }
