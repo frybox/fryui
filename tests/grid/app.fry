@@ -1,6 +1,6 @@
 from fryhcs import html, Element
 from flask import Flask
-from fryui.grid import Grid, HSplit, VSplit
+from fryui.grid import Grid, HSplit, VSplit, HCenter
 
 app = Flask(__name__)
 
@@ -26,6 +26,11 @@ def index():
             <Center>E</Center>
             <Center>F</Center>
           </Grid>
+          <HCenter>
+            <div bg-primary-bgx text-primary-t width="3fr">
+              这是一个HCenter
+            </div>
+          </HCenter>
         </HSplit>
       </div>)
     return html(grid, title="fryui", autoreload=False)

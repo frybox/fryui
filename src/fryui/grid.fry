@@ -139,19 +139,58 @@ def VSplit(resizable=True, children=[]):
     </template>
 
 
-def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True):
+def HCenter(children, resizable=True, left=None, right=None):
+    if not children or len(children) != 1:
+        raise RuntimeError("HCenter should have and only have one child.")
+    center = children[0]
+    wcenter = get_width(center) or '1fr'
+    if not left:
+        left = <div></div>
+    if not right:
+        right = <div></div>
+    wleft = get_width(left) or '1fr'
+    wright = get_width(right) or '1fr'
+    if wleft != wright:
+        raise RuntimeError("left and right elements in HCenter should have the same width")
+    gridprop = {
+        col_prop_name: ' '.join([wleft, '1px', wcenter, '1px', wright])
+    }
+    ncol = 5
+
+    <template>
+      <div grid h-full style={gridprop}>
+        {left}
+        <Gutter center col={1} {ncol} {resizable} />
+        {center}
+        <Gutter center col={3} {ncol} {resizable} />
+        {right}
+      </div>
+    </template>
+
+
+def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
     ish = row%2 == 1
     isv = col%2 == 1
     if ish and (row <= 0 or row >= nrow-1):
         raise RuntimeError(f"Invalid gutter row: {row}")
     if isv and (col <= 0 or col >= ncol-1):
         raise RuntimeError(f"Invalid gutter col: {col}")
+    if center:
+        if ish and isv:
+            raise RuntimeError(f"VCenter and HCenter have no cross Gutter")
+        if ish and (nrow != 5 or row not in (1, 3) or col != 0 or ncol != 1):
+            raise RuntimeError(f"VCenter has invalid row({row}) or col({col})")
+        if isv and (ncol != 5 or col not in (1, 3) or row != 0 or nrow != 1):
+            raise RuntimeError(f"VCenter has invalid row({row}) or col({col})")
+
     if ish and isv:
         cursor = 'cursor-move'
     elif ish:
         cursor = 'cursor-ns-resize'
     elif isv:
         cursor = 'cursor-ew-resize'
+    else:
+        raise RuntimeError(f"Invalid gutter row({row}) or col({col})")
 
     if not resizable:
         style = []
@@ -438,7 +477,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True):
 if __name__ == '__main__':
     from fryhcs import render
     columns = ['1fr', '1fr', '1fr']
-    rows = ['1fr', '1fr']
+    rows = '1fr 1fr'
     print(render(<Grid {columns} {rows}>
                    <div> </div>
                    <div> </div>
