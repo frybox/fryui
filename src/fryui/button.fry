@@ -205,7 +205,13 @@ def Button (
     styles = base + size + shape + color
 
     <template>
-      <button {*styles}>
+      <button ref=(button) @click=(onclick) {*styles}>
         {children}
       </button>
     </template>
+    <script>
+      import { signal } from "fryhcs";
+      const clicked = signal(0);
+      const onclick = () => { clicked.value ++ };
+      export default { button, clicked };
+    </script>
