@@ -136,7 +136,7 @@ def Main():
         <div>
           <h1 mt-20 mb-10 text-xl text-primary>圆按钮</h1>
           <div flex gap-3 items-center>
-            <Button ref=(roundButton) circle primary>
+            <Button @click=(onclick) circle primary>
               圆按钮
             </Button>
           </div>
@@ -144,10 +144,5 @@ def Main():
       </div>
     </template>
     <script>
-      import {effect} from "fryhcs";
-      effect(() => {
-        if (roundButton.clicked.value) {
-          console.log("clicked");
-        }
-      })
+      const onclick = () => {console.log("clicked")};
     </script>
