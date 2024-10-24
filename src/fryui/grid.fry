@@ -265,7 +265,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
 
         const columnPropName = 'grid-template-columns';
         const rowPropName = 'grid-template-rows';
-        const bgColor = 'bg-primary-bdxx';
+        const bgColor = 'bg-primary-bdaxx';
         const grid = el.parentElement;
 
         bar.classList.add('h-full');
