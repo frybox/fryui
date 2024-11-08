@@ -150,39 +150,39 @@ def Button (
                     ]
     else:
         if primary:
-            color = ['bg-primary', 'border-primary', 'text-primary-content',
+            color = ['bg-primary', 'border-primary', 'text-primary-tx',
                      'outline-primary', 'no-underline',
-                     'hover:bg-primaryx', 'hover:boder-primaryx',
+                     'hover:bg-primaryx', 'hover:border-primaryx',
                     ]
         elif secondary:
-            color = ['bg-secondary', 'border-secondary', 'text-secondary-content',
+            color = ['bg-secondary', 'border-secondary', 'text-secondary-tx',
                      'outline-secondary', 'no-underline',
-                     'hover:bg-secondaryx', 'hover:boder-secondaryx',
+                     'hover:bg-secondaryx', 'hover:border-secondaryx',
                     ]
         elif accent:
-            color = ['bg-accent', 'border-accent', 'text-accent-content',
+            color = ['bg-accent', 'border-accent', 'text-accent-tx',
                      'outline-accent', 'no-underline',
-                     'hover:bg-accentx', 'hover:boder-accentx',
+                     'hover:bg-accentx', 'hover:border-accentx',
                     ]
         elif info:
-            color = ['bg-info', 'border-info', 'text-info-content',
+            color = ['bg-info', 'border-info', 'text-info-tx',
                      'outline-info', 'no-underline',
-                     'hover:bg-infox', 'hover:boder-infox',
+                     'hover:bg-infox', 'hover:border-infox',
                     ]
         elif success:
-            color = ['bg-success', 'border-success', 'text-success-content',
+            color = ['bg-success', 'border-success', 'text-success-tx',
                      'outline-success', 'no-underline',
-                     'hover:bg-successx', 'hover:boder-successx',
+                     'hover:bg-successx', 'hover:border-successx',
                     ]
         elif warning:
-            color = ['bg-warning', 'border-warning', 'text-warning-content',
+            color = ['bg-warning', 'border-warning', 'text-warning-tx',
                      'outline-warning', 'no-underline',
-                     'hover:bg-warningx', 'hover:boder-warningx',
+                     'hover:bg-warningx', 'hover:border-warningx',
                     ]
         elif error:
-            color = ['bg-error', 'border-error', 'text-error-content',
+            color = ['bg-error', 'border-error', 'text-error-tx',
                      'outline-error', 'no-underline',
-                     'hover:bg-errorx', 'hover:boder-errorx',
+                     'hover:bg-errorx', 'hover:border-errorx',
                     ]
         elif ghost:
             color = ['border', 'border-transparent', 'bg-transparent',
@@ -200,7 +200,7 @@ def Button (
         else:
             color = ['bg-gray-el', 'border-gray-el', 'text-gray-tx',
                      'outline-gray-tx', 'no-underline',
-                     'hover:bg-gray-elx', 'hover:boder-gray-elx',
+                     'hover:bg-gray-elx', 'hover:border-gray-elx',
                     ]
     styles = base + size + shape + color
 
