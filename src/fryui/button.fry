@@ -205,7 +205,11 @@ def Button (
     styles = base + size + shape + color
 
     <template>
-      <button {*styles}>
+      <button {*styles} ref=(dom)>
         {children}
       </button>
     </template>
+    <script>
+      const focus = () => { dom.focus(); };
+      export default { focus }
+    </script>
