@@ -1,12 +1,15 @@
 from fryhcs import html, Element
 from flask import Flask
-from fryui.grid import Grid, HSplit, VSplit, HCenter, VCenter
+from fryui import Grid, HSplit, VSplit, HCenter, VCenter, Button
 
 app = Flask(__name__)
 
 @app.get('/')
 def index():
-    grid = (
+    return html(App, title="fryui", autoreload=False)
+
+def App():
+    <template>
       <div m-10 border-3 border-primary h-90vh text-primary bg-base>
         <HSplit resizable={False}>
           <HSplit>
@@ -26,23 +29,49 @@ def index():
             <Center>E</Center>
             <Center>F</Center>
           </Grid>
-          <HCenter>
+          <HCenter ref=(hcenter)>
             <div bg-primary-bgx text-primary-t width="3fr">
               这是一个HCenter
             </div>
           </HCenter>
-          <VCenter>
+          <Center>
+            <Button primary @click=(hbroaden)>扩大</Button>
+            <Button primary @click=(hnarrow)>缩小</Button>
+          </Center>
+          <VCenter ref=(vcenter)>
             <div bg-primary-bgx text-primary-t height="3fr">
               这是一个VCenter
             </div>
           </VCenter>
+          <Center>
+            <Button primary @click=(vbroaden)>扩大</Button>
+            <Button primary @click=(vnarrow)>缩小</Button>
+          </Center>
         </HSplit>
-      </div>)
-    return html(grid, title="fryui", autoreload=False)
+      </div>
+    </template>
+    <script>
+        const hbroaden = () => hcenter.broaden();
+        const hnarrow = () => hcenter.narrow();
+        const vbroaden = () => vcenter.broaden();
+        const vnarrow = () => vcenter.narrow();
+        document.addEventListener('keydown', (e) => {
+          if (e.code === 'KeyB') {
+            console.log(e.code);
+            hbroaden();
+            vbroaden();
+          } else if (e.code === 'KeyN') {
+            console.log(e.code);
+            hnarrow();
+            vnarrow();
+          }
+        })
+    </script>
+
 
 def Center(children=[]):
     <template>
-      <div flex justify-center items-center min-w-150px min-h-0 overflow-hidden>
+      <div flex justify-center gap-10 items-center min-w-150px min-h-0 overflow-hidden>
         {children}
       </div>
     </template>
