@@ -243,7 +243,7 @@ def HCenter(children, resizable=True, left=None, right=None):
             }
         }
 
-        const broaden = () => {
+        this.broaden = () => {
             initialize();
             let sideSize = pxcols[0].numeric;
             let centerSize = pxcols[2].numeric;
@@ -256,7 +256,7 @@ def HCenter(children, resizable=True, left=None, right=None):
             grid.style[columnPropName] = unparse(cols);
         }
 
-        const narrow = () => {
+        this.narrow = () => {
             initialize();
             let sideSize = pxcols[0].numeric;
             let centerSize = pxcols[2].numeric;
@@ -268,8 +268,6 @@ def HCenter(children, resizable=True, left=None, right=None):
             setColSize(4, sideSize);
             grid.style[columnPropName] = unparse(cols);
         }
-
-        export default { broaden, narrow };
     </script>
 
 
@@ -377,7 +375,7 @@ def VCenter(children, resizable=True, top=None, bottom=None):
             }
         }
 
-        const broaden = () => {
+        this.broaden = () => {
             initialize();
             let sideSize = pxrows[0].numeric;
             let centerSize = pxrows[2].numeric;
@@ -390,7 +388,7 @@ def VCenter(children, resizable=True, top=None, bottom=None):
             grid.style[rowPropName] = unparse(rows);
         }
 
-        const narrow = () => {
+        this.narrow = () => {
             initialize();
             let sideSize = pxrows[0].numeric;
             let centerSize = pxrows[2].numeric;
@@ -402,8 +400,6 @@ def VCenter(children, resizable=True, top=None, bottom=None):
             setRowSize(4, sideSize);
             grid.style[rowPropName] = unparse(rows);
         }
-
-        export default { broaden, narrow };
     </script>
 
 
@@ -571,17 +567,6 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
                 hide();
             }
         }
-
-        export default {
-            show,
-            hide,
-            isShow,
-            col,
-            row,
-            ish,
-            isv,
-        };
-
 
         const initDrag = (e) => {
             const rect = grid.getBoundingClientRect();
@@ -751,6 +736,14 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
             grid.style.pointerEvents = '';
             setHide();
         }
+
+        this.show = show;
+        this.hide = hide;
+        this.isShow = isShow;
+        this.col = col;
+        this.row = row;
+        this.ish = ish;
+        this.isv = isv;
     </script>
 
 

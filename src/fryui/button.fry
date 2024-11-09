@@ -210,6 +210,5 @@ def Button (
       </button>
     </template>
     <script>
-      const focus = () => { dom.focus(); };
-      export default { focus }
+      this.focus = () => { dom.focus(); };
     </script>
