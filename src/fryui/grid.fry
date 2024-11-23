@@ -49,36 +49,35 @@ def Grid(columns=[], rows=[], resizable=True, children=[]):
     </template>
 
     <script {ncol} {nrow} {resizable}>
-      import { effect } from "fryhcs";
-
-      const gutterMap = {}
-
-      const elementAt = (c, r) => gutterMap[r*ncol+c];
-
-      const showLine = (gutter) => {
-          if (gutter.ish)
-              for (let c=0; c<ncol; c++)
-                  if (c != gutter.col)
-                      elementAt(c, gutter.row).show();
-          if (gutter.isv)
-              for (let r=0; r<nrow; r++)
-                  if (r != gutter.row)
-                      elementAt(gutter.col, r).show();
+      this.hgutters = (r) => {
+        const gutters = [];
+        for (let c=0; c<ncol; c++) {
+            const n = r*ncol + c;
+            const ch = this.fryelement.children.item(n);
+            if (ch && ch.frycomponents && ch.frycomponents.length > 0) {
+                const comp = ch.frycomponents[0];
+                if (comp.fryname === 'Gutter') {
+                    gutters.push(comp);
+                }
+            }
+        }
+        return gutters;
       }
 
-      const hideLine = (gutter) => {
-          if (gutter.ish)
-              for (let c=0; c<ncol; c++)
-                  if (c != gutter.col)
-                      elementAt(c, gutter.row).hide();
-          if (gutter.isv)
-              for (let r=0; r<nrow; r++)
-                  if (r != gutter.row)
-                      elementAt(gutter.col, r).hide();
+      this.vgutters = (c) => {
+        const gutters = [];
+        for (let r=0; r<nrow; r++) {
+            const n = r*ncol + c;
+            const ch = this.fryelement.children.item(n);
+            if (ch && ch.frycomponents && ch.frycomponents.length > 0) {
+                const comp = ch.frycomponents[0];
+                if (comp.fryname === 'Gutter') {
+                    gutters.push(comp);
+                }
+            }
+        }
+        return gutters;
       }
-
-      gutters.forEach(g => gutterMap[g.row*ncol+g.col] = g);
-      gutters.forEach(g => effect(()=>g.isShow.value ? showLine(g) : hideLine(g)));
     </script>
 
 def get_height(element):
@@ -443,8 +442,6 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
         </div>
     </template>
     <script {ish} {isv} {cursor} {col} {row} {ncol} {nrow} {resizable} {center}>
-        import { signal } from 'fryhcs';
-
         let dragging = false;
         let cols = [];
         let rows = [];
@@ -471,7 +468,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
 
         const columnPropName = 'grid-template-columns';
         const rowPropName = 'grid-template-rows';
-        const bgColor = 'bg-primary-bdaxx';
+        const bgColor = 'bg-primarya';
         const grid = el.parentElement;
 
         bar.classList.add('h-full');
@@ -553,18 +550,31 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
 
         const show = () => bar.classList.add(bgColor);
         const hide = () => bar.classList.remove(bgColor);
-        const isShow = signal(false);
+
+        const getGutterLine = () => {
+            if (ncol === 1 || nrow === 1) {
+                return [this];
+            }
+            const gutters = new Set();
+            if (ish) for (let gutter of this.fryparent.hgutters(row)) {
+                gutters.add(gutter);
+            }
+            if (isv) for (let gutter of this.fryparent.vgutters(col)) {
+                gutters.add(gutter);
+            }
+            return gutters;
+        }
 
         const setShow = () => {
             if (resizable) {
-                isShow.value = true;
-                show();
+                const gutters = getGutterLine();
+                gutters.forEach(gutter => gutter.show());
             }
         }
         const setHide = () => {
             if (!dragging && resizable) {
-                isShow.value = false;
-                hide();
+                const gutters = getGutterLine();
+                gutters.forEach(gutter => gutter.hide());
             }
         }
 
@@ -739,7 +749,6 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
 
         this.show = show;
         this.hide = hide;
-        this.isShow = isShow;
         this.col = col;
         this.row = row;
         this.ish = ish;
