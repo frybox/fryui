@@ -339,9 +339,11 @@ __all__ = [
 ]
 
 
-def ShuffleIcon():
+def ShuffleIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -351,9 +353,11 @@ def ShuffleIcon():
     </template>
 
 
-def ShadowOuterIcon():
+def ShadowOuterIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           opacity=".05"
           fill-rule="evenodd"
@@ -393,9 +397,11 @@ def ShadowOuterIcon():
     </template>
 
 
-def SunIcon():
+def SunIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -405,9 +411,11 @@ def SunIcon():
     </template>
 
 
-def CaretSortIcon():
+def CaretSortIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -417,9 +425,11 @@ def CaretSortIcon():
     </template>
 
 
-def SpeakerModerateIcon():
+def SpeakerModerateIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -429,9 +439,11 @@ def SpeakerModerateIcon():
     </template>
 
 
-def Half2Icon():
+def Half2Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -441,9 +453,11 @@ def Half2Icon():
     </template>
 
 
-def BoxModelIcon():
+def BoxModelIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -453,9 +467,11 @@ def BoxModelIcon():
     </template>
 
 
-def DiscordLogoIcon():
+def DiscordLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_16200_18)">
           <path
             fill-rule="evenodd"
@@ -470,9 +486,11 @@ def DiscordLogoIcon():
     </template>
 
 
-def Share2Icon():
+def Share2Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -482,9 +500,11 @@ def Share2Icon():
     </template>
 
 
-def CornerTopLeftIcon():
+def CornerTopLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -494,9 +514,11 @@ def CornerTopLeftIcon():
     </template>
 
 
-def ViewHorizontalIcon():
+def ViewHorizontalIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -506,9 +528,11 @@ def ViewHorizontalIcon():
     </template>
 
 
-def MagnifyingGlassIcon():
+def MagnifyingGlassIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -518,9 +542,11 @@ def MagnifyingGlassIcon():
     </template>
 
 
-def DragHandleDots2Icon():
+def DragHandleDots2Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -530,9 +556,11 @@ def DragHandleDots2Icon():
     </template>
 
 
-def ClockIcon():
+def ClockIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -542,9 +570,11 @@ def ClockIcon():
     </template>
 
 
-def LinkBreak2Icon():
+def LinkBreak2Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -554,9 +584,11 @@ def LinkBreak2Icon():
     </template>
 
 
-def StopwatchIcon():
+def StopwatchIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -566,9 +598,11 @@ def StopwatchIcon():
     </template>
 
 
-def FilePlusIcon():
+def FilePlusIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -578,9 +612,11 @@ def FilePlusIcon():
     </template>
 
 
-def StrikethroughIcon():
+def StrikethroughIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -590,9 +626,11 @@ def StrikethroughIcon():
     </template>
 
 
-def ColumnSpacingIcon():
+def ColumnSpacingIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -602,9 +640,11 @@ def ColumnSpacingIcon():
     </template>
 
 
-def OverlineIcon():
+def OverlineIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -614,9 +654,11 @@ def OverlineIcon():
     </template>
 
 
-def AvatarIcon():
+def AvatarIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -626,9 +668,11 @@ def AvatarIcon():
     </template>
 
 
-def CopyIcon():
+def CopyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -638,9 +682,11 @@ def CopyIcon():
     </template>
 
 
-def QuestionMarkCircledIcon():
+def QuestionMarkCircledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -650,9 +696,11 @@ def QuestionMarkCircledIcon():
     </template>
 
 
-def Component2Icon():
+def Component2Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -662,9 +710,11 @@ def Component2Icon():
     </template>
 
 
-def MobileIcon():
+def MobileIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -674,9 +724,11 @@ def MobileIcon():
     </template>
 
 
-def FontStyleIcon():
+def FontStyleIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -686,9 +738,11 @@ def FontStyleIcon():
     </template>
 
 
-def MaskOffIcon():
+def MaskOffIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -698,9 +752,11 @@ def MaskOffIcon():
     </template>
 
 
-def HeartFilledIcon():
+def HeartFilledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -710,9 +766,11 @@ def HeartFilledIcon():
     </template>
 
 
-def PauseIcon():
+def PauseIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -722,9 +780,11 @@ def PauseIcon():
     </template>
 
 
-def DoubleArrowUpIcon():
+def DoubleArrowUpIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -734,9 +794,11 @@ def DoubleArrowUpIcon():
     </template>
 
 
-def KeyboardIcon():
+def KeyboardIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <rect x=".5" y="3.5" width="14" height="8" rx="1" stroke="currentColor" />
         <path
           d="M2 5H3V6H2zM4 5H5V6H4zM6 5H7V6H6zM8 5H9V6H8zM10 5H11V6H10zM12 5H13V6H12zM11 7H12V8H11zM12 9H13V10H12zM9 7H10V8H9zM7 7H8V8H7zM5 7H6V8H5zM3 7H4V8H3zM2 9H3V10H2zM4 9H11V10H4z"
@@ -745,9 +807,11 @@ def KeyboardIcon():
     </template>
 
 
-def ExclamationTriangleIcon():
+def ExclamationTriangleIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -757,9 +821,11 @@ def ExclamationTriangleIcon():
     </template>
 
 
-def PinRightIcon():
+def PinRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -769,9 +835,11 @@ def PinRightIcon():
     </template>
 
 
-def PlayIcon():
+def PlayIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -781,9 +849,11 @@ def PlayIcon():
     </template>
 
 
-def SewingPinFilledIcon():
+def SewingPinFilledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -793,9 +863,11 @@ def SewingPinFilledIcon():
     </template>
 
 
-def EraserIcon():
+def EraserIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -805,9 +877,11 @@ def EraserIcon():
     </template>
 
 
-def ViewVerticalIcon():
+def ViewVerticalIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -817,9 +891,11 @@ def ViewVerticalIcon():
     </template>
 
 
-def Cross1Icon():
+def Cross1Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -829,9 +905,11 @@ def Cross1Icon():
     </template>
 
 
-def CornerBottomRightIcon():
+def CornerBottomRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -841,9 +919,11 @@ def CornerBottomRightIcon():
     </template>
 
 
-def OpenInNewWindowIcon():
+def OpenInNewWindowIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -855,9 +935,11 @@ def OpenInNewWindowIcon():
     </template>
 
 
-def GithubLogoIcon():
+def GithubLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -867,9 +949,11 @@ def GithubLogoIcon():
     </template>
 
 
-def TimerIcon():
+def TimerIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -879,9 +963,11 @@ def TimerIcon():
     </template>
 
 
-def SizeIcon():
+def SizeIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -891,9 +977,11 @@ def SizeIcon():
     </template>
 
 
-def StarIcon():
+def StarIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -903,9 +991,11 @@ def StarIcon():
     </template>
 
 
-def RowsIcon():
+def RowsIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -915,9 +1005,11 @@ def RowsIcon():
     </template>
 
 
-def NotionLogoIcon():
+def NotionLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M3.25781 3.11684C3.67771 3.45796 3.83523 3.43193 4.62369 3.37933L12.0571 2.93299C12.2147 2.93299 12.0836 2.77571 12.0311 2.74957L10.7965 1.85711C10.56 1.67347 10.2448 1.46315 9.64083 1.51576L2.44308 2.04074C2.18059 2.06677 2.12815 2.19801 2.2327 2.30322L3.25781 3.11684ZM3.7041 4.84917V12.6704C3.7041 13.0907 3.91415 13.248 4.38693 13.222L12.5562 12.7493C13.0292 12.7233 13.0819 12.4341 13.0819 12.0927V4.32397C13.0819 3.98306 12.9508 3.79921 12.6612 3.82545L4.12422 4.32397C3.80918 4.35044 3.7041 4.50803 3.7041 4.84917ZM11.7688 5.26872C11.8212 5.50518 11.7688 5.74142 11.5319 5.76799L11.1383 5.84641V11.6205C10.7965 11.8042 10.4814 11.9092 10.2188 11.9092C9.79835 11.9092 9.69305 11.7779 9.37812 11.3844L6.80345 7.34249V11.2532L7.61816 11.437C7.61816 11.437 7.61816 11.9092 6.96086 11.9092L5.14879 12.0143C5.09615 11.9092 5.14879 11.647 5.33259 11.5944L5.80546 11.4634V6.29276L5.1489 6.24015C5.09625 6.00369 5.22739 5.66278 5.5954 5.63631L7.53935 5.50528L10.2188 9.5998V5.97765L9.53564 5.89924C9.4832 5.61018 9.69305 5.40028 9.95576 5.37425L11.7688 5.26872ZM1.83874 1.33212L9.32557 0.780787C10.245 0.701932 10.4815 0.754753 11.0594 1.17452L13.4492 2.85424C13.8436 3.14309 13.975 3.22173 13.975 3.53661V12.7493C13.975 13.3266 13.7647 13.6681 13.0293 13.7203L4.33492 14.2454C3.78291 14.2717 3.52019 14.193 3.23111 13.8253L1.47116 11.5419C1.1558 11.1216 1.02466 10.8071 1.02466 10.4392V2.25041C1.02466 1.77825 1.23504 1.38441 1.83874 1.33212Z"
         />
@@ -925,9 +1017,11 @@ def NotionLogoIcon():
     </template>
 
 
-def JustifyEndIcon():
+def JustifyEndIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -937,9 +1031,11 @@ def JustifyEndIcon():
     </template>
 
 
-def ValueNoneIcon():
+def ValueNoneIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -949,9 +1045,11 @@ def ValueNoneIcon():
     </template>
 
 
-def IconjarLogoIcon():
+def IconjarLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -961,9 +1059,11 @@ def IconjarLogoIcon():
     </template>
 
 
-def EyeOpenIcon():
+def EyeOpenIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -973,9 +1073,11 @@ def EyeOpenIcon():
     </template>
 
 
-def ImageIcon():
+def ImageIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -985,9 +1087,11 @@ def ImageIcon():
     </template>
 
 
-def DotIcon():
+def DotIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -997,9 +1101,11 @@ def DotIcon():
     </template>
 
 
-def ClipboardCopyIcon():
+def ClipboardCopyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1009,9 +1115,11 @@ def ClipboardCopyIcon():
     </template>
 
 
-def HeadingIcon():
+def HeadingIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1021,9 +1129,11 @@ def HeadingIcon():
     </template>
 
 
-def EyeNoneIcon():
+def EyeNoneIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1033,9 +1143,11 @@ def EyeNoneIcon():
     </template>
 
 
-def AspectRatioIcon():
+def AspectRatioIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1045,9 +1157,11 @@ def AspectRatioIcon():
     </template>
 
 
-def BorderWidthIcon():
+def BorderWidthIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1057,9 +1171,11 @@ def BorderWidthIcon():
     </template>
 
 
-def RadiobuttonIcon():
+def RadiobuttonIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1069,9 +1185,11 @@ def RadiobuttonIcon():
     </template>
 
 
-def JustifyStartIcon():
+def JustifyStartIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1081,9 +1199,11 @@ def JustifyStartIcon():
     </template>
 
 
-def ExitFullScreenIcon():
+def ExitFullScreenIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1093,9 +1213,11 @@ def ExitFullScreenIcon():
     </template>
 
 
-def AllSidesIcon():
+def AllSidesIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1105,9 +1227,11 @@ def AllSidesIcon():
     </template>
 
 
-def StretchVerticallyIcon():
+def StretchVerticallyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1117,9 +1241,11 @@ def StretchVerticallyIcon():
     </template>
 
 
-def ExitIcon():
+def ExitIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1129,9 +1255,11 @@ def ExitIcon():
     </template>
 
 
-def HeightIcon():
+def HeightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1141,9 +1269,11 @@ def HeightIcon():
     </template>
 
 
-def ChevronLeftIcon():
+def ChevronLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1153,9 +1283,11 @@ def ChevronLeftIcon():
     </template>
 
 
-def BorderSolidIcon():
+def BorderSolidIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1165,9 +1297,11 @@ def BorderSolidIcon():
     </template>
 
 
-def CubeIcon():
+def CubeIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1177,9 +1311,11 @@ def CubeIcon():
     </template>
 
 
-def CardStackMinusIcon():
+def CardStackMinusIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1189,9 +1325,11 @@ def CardStackMinusIcon():
     </template>
 
 
-def TextAlignRightIcon():
+def TextAlignRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1201,9 +1339,11 @@ def TextAlignRightIcon():
     </template>
 
 
-def MixIcon():
+def MixIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1213,9 +1353,11 @@ def MixIcon():
     </template>
 
 
-def AlignBaselineIcon():
+def AlignBaselineIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1225,9 +1367,11 @@ def AlignBaselineIcon():
     </template>
 
 
-def AlignCenterVerticallyIcon():
+def AlignCenterVerticallyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1237,9 +1381,11 @@ def AlignCenterVerticallyIcon():
     </template>
 
 
-def SymbolIcon():
+def SymbolIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1249,9 +1395,11 @@ def SymbolIcon():
     </template>
 
 
-def CropIcon():
+def CropIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1261,9 +1409,11 @@ def CropIcon():
     </template>
 
 
-def AlignHorizontalCentersIcon():
+def AlignHorizontalCentersIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1273,9 +1423,11 @@ def AlignHorizontalCentersIcon():
     </template>
 
 
-def LockClosedIcon():
+def LockClosedIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1285,9 +1437,11 @@ def LockClosedIcon():
     </template>
 
 
-def SpeakerQuietIcon():
+def SpeakerQuietIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1297,9 +1451,11 @@ def SpeakerQuietIcon():
     </template>
 
 
-def BlendingModeIcon():
+def BlendingModeIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1309,9 +1465,11 @@ def BlendingModeIcon():
     </template>
 
 
-def VideoIcon():
+def VideoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1321,9 +1479,11 @@ def VideoIcon():
     </template>
 
 
-def Pencil2Icon():
+def Pencil2Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1333,17 +1493,21 @@ def Pencil2Icon():
     </template>
 
 
-def TriangleLeftIcon():
+def TriangleLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path d="M9 4L9 11L4.5 7.5L9 4Z" />
       </svg>
     </template>
 
 
-def ShadowNoneIcon():
+def ShadowNoneIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           opacity=".05"
           fill-rule="evenodd"
@@ -1413,9 +1577,11 @@ def ShadowNoneIcon():
     </template>
 
 
-def CheckIcon():
+def CheckIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1425,9 +1591,11 @@ def CheckIcon():
     </template>
 
 
-def EnterIcon():
+def EnterIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1437,9 +1605,11 @@ def EnterIcon():
     </template>
 
 
-def ChevronRightIcon():
+def ChevronRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1449,17 +1619,21 @@ def ChevronRightIcon():
     </template>
 
 
-def TriangleRightIcon():
+def TriangleRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 11L6 4L10.5 7.5L6 11Z" />
       </svg>
     </template>
 
 
-def DragHandleHorizontalIcon():
+def DragHandleHorizontalIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1469,9 +1643,11 @@ def DragHandleHorizontalIcon():
     </template>
 
 
-def PinTopIcon():
+def PinTopIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1481,9 +1657,11 @@ def PinTopIcon():
     </template>
 
 
-def DrawingPinFilledIcon():
+def DrawingPinFilledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1498,9 +1676,11 @@ def DrawingPinFilledIcon():
     </template>
 
 
-def DividerVerticalIcon():
+def DividerVerticalIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1510,9 +1690,11 @@ def DividerVerticalIcon():
     </template>
 
 
-def PinBottomIcon():
+def PinBottomIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1522,9 +1704,11 @@ def PinBottomIcon():
     </template>
 
 
-def CheckCircledIcon():
+def CheckCircledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1534,9 +1718,11 @@ def CheckCircledIcon():
     </template>
 
 
-def SpeakerLoudIcon():
+def SpeakerLoudIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1546,9 +1732,11 @@ def SpeakerLoudIcon():
     </template>
 
 
-def RotateCounterClockwiseIcon():
+def RotateCounterClockwiseIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1558,9 +1746,11 @@ def RotateCounterClockwiseIcon():
     </template>
 
 
-def TextAlignMiddleIcon():
+def TextAlignMiddleIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1570,9 +1760,11 @@ def TextAlignMiddleIcon():
     </template>
 
 
-def CalendarIcon():
+def CalendarIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1582,9 +1774,11 @@ def CalendarIcon():
     </template>
 
 
-def ArchiveIcon():
+def ArchiveIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1594,9 +1788,11 @@ def ArchiveIcon():
     </template>
 
 
-def BorderLeftIcon():
+def BorderLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M1.75 1L1.75 14L0.249999 14L0.25 1L1.75 1Z" />
         <rect x="10" y="7" width="1" height="1" rx=".5" transform="rotate(90 10 7)" />
         <rect x="10" y="13" width="1" height="1" rx=".5" transform="rotate(90 10 13)" />
@@ -1628,9 +1824,11 @@ def BorderLeftIcon():
     </template>
 
 
-def FileTextIcon():
+def FileTextIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1640,9 +1838,11 @@ def FileTextIcon():
     </template>
 
 
-def BackpackIcon():
+def BackpackIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1652,9 +1852,11 @@ def BackpackIcon():
     </template>
 
 
-def ActivityLogIcon():
+def ActivityLogIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1664,9 +1866,11 @@ def ActivityLogIcon():
     </template>
 
 
-def ButtonIcon():
+def ButtonIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1676,9 +1880,11 @@ def ButtonIcon():
     </template>
 
 
-def LineHeightIcon():
+def LineHeightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1688,9 +1894,11 @@ def LineHeightIcon():
     </template>
 
 
-def DrawingPinIcon():
+def DrawingPinIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1700,9 +1908,11 @@ def DrawingPinIcon():
     </template>
 
 
-def ThickArrowRightIcon():
+def ThickArrowRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1712,9 +1922,11 @@ def ThickArrowRightIcon():
     </template>
 
 
-def SpaceBetweenHorizontallyIcon():
+def SpaceBetweenHorizontallyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1724,9 +1936,11 @@ def SpaceBetweenHorizontallyIcon():
     </template>
 
 
-def StackIcon():
+def StackIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1736,9 +1950,11 @@ def StackIcon():
     </template>
 
 
-def MinusCircledIcon():
+def MinusCircledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1748,9 +1964,11 @@ def MinusCircledIcon():
     </template>
 
 
-def CardStackPlusIcon():
+def CardStackPlusIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1760,9 +1978,11 @@ def CardStackPlusIcon():
     </template>
 
 
-def DotsHorizontalIcon():
+def DotsHorizontalIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1772,9 +1992,11 @@ def DotsHorizontalIcon():
     </template>
 
 
-def IdCardIcon():
+def IdCardIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1784,9 +2006,11 @@ def IdCardIcon():
     </template>
 
 
-def DrawingPinSolidIcon():
+def DrawingPinSolidIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1801,9 +2025,11 @@ def DrawingPinSolidIcon():
     </template>
 
 
-def EnvelopeOpenIcon():
+def EnvelopeOpenIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1813,9 +2039,11 @@ def EnvelopeOpenIcon():
     </template>
 
 
-def AlignCenterHorizontallyIcon():
+def AlignCenterHorizontallyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1825,9 +2053,11 @@ def AlignCenterHorizontallyIcon():
     </template>
 
 
-def AngleIcon():
+def AngleIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1837,9 +2067,11 @@ def AngleIcon():
     </template>
 
 
-def DoubleArrowRightIcon():
+def DoubleArrowRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1849,9 +2081,11 @@ def DoubleArrowRightIcon():
     </template>
 
 
-def AlignEndIcon():
+def AlignEndIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1861,9 +2095,11 @@ def AlignEndIcon():
     </template>
 
 
-def SpaceEvenlyHorizontallyIcon():
+def SpaceEvenlyHorizontallyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1873,9 +2109,11 @@ def SpaceEvenlyHorizontallyIcon():
     </template>
 
 
-def CountdownTimerIcon():
+def CountdownTimerIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1885,9 +2123,11 @@ def CountdownTimerIcon():
     </template>
 
 
-def MarginIcon():
+def MarginIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1897,9 +2137,11 @@ def MarginIcon():
     </template>
 
 
-def BorderAllIcon():
+def BorderAllIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1918,9 +2160,11 @@ def BorderAllIcon():
     </template>
 
 
-def ArrowBottomLeftIcon():
+def ArrowBottomLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1930,9 +2174,11 @@ def ArrowBottomLeftIcon():
     </template>
 
 
-def LetterCaseCapitalizeIcon():
+def LetterCaseCapitalizeIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1942,9 +2188,11 @@ def LetterCaseCapitalizeIcon():
     </template>
 
 
-def ColumnsIcon():
+def ColumnsIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1954,9 +2202,11 @@ def ColumnsIcon():
     </template>
 
 
-def CrumpledPaperIcon():
+def CrumpledPaperIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1966,9 +2216,11 @@ def CrumpledPaperIcon():
     </template>
 
 
-def AccessibilityIcon():
+def AccessibilityIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1978,9 +2230,11 @@ def AccessibilityIcon():
     </template>
 
 
-def TrackPreviousIcon():
+def TrackPreviousIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -1990,9 +2244,11 @@ def TrackPreviousIcon():
     </template>
 
 
-def FontItalicIcon():
+def FontItalicIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2002,9 +2258,11 @@ def FontItalicIcon():
     </template>
 
 
-def CornerTopRightIcon():
+def CornerTopRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2014,9 +2272,11 @@ def CornerTopRightIcon():
     </template>
 
 
-def TextAlignLeftIcon():
+def TextAlignLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2026,9 +2286,11 @@ def TextAlignLeftIcon():
     </template>
 
 
-def TextAlignCenterIcon():
+def TextAlignCenterIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2038,9 +2300,11 @@ def TextAlignCenterIcon():
     </template>
 
 
-def DashboardIcon():
+def DashboardIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2050,9 +2314,11 @@ def DashboardIcon():
     </template>
 
 
-def CookieIcon():
+def CookieIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2062,9 +2328,11 @@ def CookieIcon():
     </template>
 
 
-def CounterClockwiseClockIcon():
+def CounterClockwiseClockIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2074,9 +2342,11 @@ def CounterClockwiseClockIcon():
     </template>
 
 
-def TextAlignBottomIcon():
+def TextAlignBottomIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2086,9 +2356,11 @@ def TextAlignBottomIcon():
     </template>
 
 
-def TextAlignJustifyIcon():
+def TextAlignJustifyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2098,9 +2370,11 @@ def TextAlignJustifyIcon():
     </template>
 
 
-def CaretRightIcon():
+def CaretRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2110,9 +2384,11 @@ def CaretRightIcon():
     </template>
 
 
-def HobbyKnifeIcon():
+def HobbyKnifeIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2122,9 +2398,11 @@ def HobbyKnifeIcon():
     </template>
 
 
-def ArrowUpIcon():
+def ArrowUpIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2134,9 +2412,11 @@ def ArrowUpIcon():
     </template>
 
 
-def ThickArrowUpIcon():
+def ThickArrowUpIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2146,9 +2426,11 @@ def ThickArrowUpIcon():
     </template>
 
 
-def LockOpen1Icon():
+def LockOpen1Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2158,9 +2440,11 @@ def LockOpen1Icon():
     </template>
 
 
-def Share1Icon():
+def Share1Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2170,9 +2454,11 @@ def Share1Icon():
     </template>
 
 
-def StitchesLogoIcon():
+def StitchesLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2182,9 +2468,11 @@ def StitchesLogoIcon():
     </template>
 
 
-def Link1Icon():
+def Link1Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2194,9 +2482,11 @@ def Link1Icon():
     </template>
 
 
-def ContainerIcon():
+def ContainerIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2206,9 +2496,11 @@ def ContainerIcon():
     </template>
 
 
-def AlignVerticalCentersIcon():
+def AlignVerticalCentersIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2218,9 +2510,11 @@ def AlignVerticalCentersIcon():
     </template>
 
 
-def TextIcon():
+def TextIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2230,9 +2524,11 @@ def TextIcon():
     </template>
 
 
-def AlignTopIcon():
+def AlignTopIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2242,9 +2538,11 @@ def AlignTopIcon():
     </template>
 
 
-def DoubleArrowDownIcon():
+def DoubleArrowDownIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2254,9 +2552,11 @@ def DoubleArrowDownIcon():
     </template>
 
 
-def HomeIcon():
+def HomeIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2266,9 +2566,11 @@ def HomeIcon():
     </template>
 
 
-def AlignCenterIcon():
+def AlignCenterIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2278,9 +2580,11 @@ def AlignCenterIcon():
     </template>
 
 
-def FontFamilyIcon():
+def FontFamilyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M2.5 4.5C2.5 3.09886 3.59886 2 5 2H12.499C12.7752 2 13 2.22386 13 2.5C13 2.77614 12.7761 3 12.5 3H8.69244L8.40509 3.85458C8.18869 4.49752 7.89401 5.37197 7.58091 6.29794C7.50259 6.52956 7.42308 6.76453 7.34332 7H8.5C8.77614 7 9 7.22386 9 7.5C9 7.77614 8.77614 8 8.5 8H7.00407C6.56724 9.28543 6.16435 10.4613 5.95799 11.0386C5.63627 11.9386 5.20712 12.4857 4.66741 12.7778C4.16335 13.0507 3.64154 13.0503 3.28378 13.05L3.25 13.05C2.94624 13.05 2.7 12.8037 2.7 12.5C2.7 12.1962 2.94624 11.95 3.25 11.95C3.64182 11.95 3.9035 11.9405 4.14374 11.8105C4.36443 11.691 4.65532 11.4148 4.92217 10.6683C5.10695 10.1514 5.45375 9.14134 5.8422 8H4.5C4.22386 8 4 7.77614 4 7.5C4 7.22386 4.22386 7 4.5 7H6.18187C6.30127 6.64785 6.42132 6.29323 6.53887 5.94559C6.85175 5.02025 7.14627 4.14631 7.36256 3.50368L7.53192 3H5C4.15114 3 3.5 3.65114 3.5 4.5C3.5 4.77614 3.27614 5 3 5C2.72386 5 2.5 4.77614 2.5 4.5Z"
         />
@@ -2288,9 +2592,11 @@ def FontFamilyIcon():
     </template>
 
 
-def BorderSplitIcon():
+def BorderSplitIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <rect x="7" y="5.025" width="1" height="1" rx=".5" />
         <rect x="7" y="3.025" width="1" height="1" rx=".5" />
         <rect x="7" y="7.025" width="1" height="1" rx=".5" />
@@ -2313,9 +2619,11 @@ def BorderSplitIcon():
     </template>
 
 
-def ChevronDownIcon():
+def ChevronDownIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2325,9 +2633,11 @@ def ChevronDownIcon():
     </template>
 
 
-def BookmarkIcon():
+def BookmarkIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2337,9 +2647,11 @@ def BookmarkIcon():
     </template>
 
 
-def DotSolidIcon():
+def DotSolidIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M9.875 7.5C9.875 8.81168 8.81168 9.875 7.5 9.875C6.18832 9.875 5.125 8.81168 5.125 7.5C5.125 6.18832 6.18832 5.125 7.5 5.125C8.81168 5.125 9.875 6.18832 9.875 7.5Z"
         />
@@ -2347,9 +2659,11 @@ def DotSolidIcon():
     </template>
 
 
-def MagicWandIcon():
+def MagicWandIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2359,9 +2673,11 @@ def MagicWandIcon():
     </template>
 
 
-def DiscIcon():
+def DiscIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2371,9 +2687,11 @@ def DiscIcon():
     </template>
 
 
-def InstagramLogoIcon():
+def InstagramLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M4.84293 1.5386C5.5247 1.50748 5.7372 1.5 7.50006 1.5C9.26294 1.5 9.47534 1.50748 10.1571 1.53872L10.1572 1.53873C10.8016 1.56802 11.2198 1.66861 11.5768 1.80722L11.5768 1.80724L11.5817 1.80908C11.9473 1.94671 12.2786 2.16246 12.5523 2.44128L12.5523 2.44134L12.5588 2.44777C12.8376 2.72149 13.0533 3.05273 13.1909 3.41838L13.1909 3.41839L13.1928 3.42341C13.3315 3.78023 13.4321 4.19841 13.4615 4.84288C13.4926 5.52465 13.5001 5.73717 13.5001 7.50001C13.5001 9.26285 13.4926 9.47528 13.4615 10.1572C13.4321 10.8016 13.3315 11.2198 13.1928 11.5766L13.1925 11.5774C13.0506 11.9442 12.8337 12.2774 12.5556 12.5555C12.2775 12.8336 11.9443 13.0505 11.5775 13.1924L11.5767 13.1927C11.2199 13.3314 10.8017 13.432 10.1572 13.4614C9.47548 13.4925 9.26296 13.5 7.50012 13.5C5.73728 13.5 5.52485 13.4925 4.84298 13.4614C4.19854 13.432 3.78036 13.3314 3.42351 13.1927L3.42352 13.1927L3.41848 13.1908C3.05283 13.0532 2.7216 12.8375 2.44787 12.5587L2.44793 12.5587L2.44142 12.5523C2.16265 12.2785 1.94695 11.9473 1.80935 11.5816L1.80937 11.5816L1.80742 11.5766C1.66874 11.2198 1.56814 10.8016 1.53872 10.1571L1.53872 10.1571C1.50748 9.47534 1.5 9.26289 1.5 7.50001C1.5 5.73714 1.50748 5.52469 1.53872 4.84297L1.53873 4.84279C1.56802 4.19838 1.66861 3.78018 1.80722 3.42325L1.80724 3.42326L1.80907 3.4184C1.94672 3.05274 2.16248 2.7215 2.44131 2.44779L2.44137 2.44785L2.44782 2.44129C2.72154 2.16252 3.05278 1.94682 3.41843 1.80922L3.41844 1.80924L3.42346 1.80729C3.78028 1.66861 4.19845 1.56801 4.84293 1.5386ZM4.84293 1.5386L4.82014 1.03912M4.84293 1.5386L4.82014 1.03912M4.82014 1.03912C4.12826 1.0707 3.65578 1.18056 3.24233 1.34125L1.03924 10.1799C1.07083 10.8718 1.18069 11.3443 1.34138 11.7577C1.5046 12.1915 1.76045 12.5843 2.09111 12.909C2.41578 13.2397 2.80867 13.4955 3.24238 13.6587C3.65586 13.8194 4.12834 13.9293 4.82019 13.9609C5.51348 13.9925 5.73483 14 7.50012 14C9.2654 14 9.48685 13.9925 10.18 13.9609C10.8719 13.9293 11.3444 13.8194 11.7578 13.6587C12.1896 13.4917 12.5818 13.2364 12.9091 12.909C13.2365 12.5817 13.4918 12.1895 13.6588 11.7577C13.8195 11.3443 13.9294 10.8718 13.961 10.1799C13.9926 9.48665 14.0001 9.26529 14.0001 7.50001C14.0001 5.73473 13.9926 5.51328 13.961 4.82008C13.9294 4.12821 13.8195 3.65573 13.6588 3.24228C13.4956 2.80857 13.2398 2.41567 12.9091 2.091C12.5844 1.76028 12.1915 1.50437 11.7578 1.34113C11.3443 1.18056 10.8718 1.0707 10.1799 1.03924C9.48675 1.00748 9.26537 1 7.50006 1C5.73476 1 5.51333 1.00748 4.82014 1.03912Z"
           stroke="currentColor"
@@ -2384,9 +2702,11 @@ def InstagramLogoIcon():
     </template>
 
 
-def SewingPinSolidIcon():
+def SewingPinSolidIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2396,9 +2716,11 @@ def SewingPinSolidIcon():
     </template>
 
 
-def MaskOnIcon():
+def MaskOnIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2408,9 +2730,11 @@ def MaskOnIcon():
     </template>
 
 
-def FigmaLogoIcon():
+def FigmaLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2420,9 +2744,11 @@ def FigmaLogoIcon():
     </template>
 
 
-def CommitIcon():
+def CommitIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2432,9 +2758,11 @@ def CommitIcon():
     </template>
 
 
-def LetterSpacingIcon():
+def LetterSpacingIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2444,9 +2772,11 @@ def LetterSpacingIcon():
     </template>
 
 
-def RulerSquareIcon():
+def RulerSquareIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2456,9 +2786,11 @@ def RulerSquareIcon():
     </template>
 
 
-def CaretUpIcon():
+def CaretUpIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2468,17 +2800,21 @@ def CaretUpIcon():
     </template>
 
 
-def TriangleUpIcon():
+def TriangleUpIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path d="M4 9H11L7.5 4.5L4 9Z" />
       </svg>
     </template>
 
 
-def ReloadIcon():
+def ReloadIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2488,9 +2824,11 @@ def ReloadIcon():
     </template>
 
 
-def Cross2Icon():
+def Cross2Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2500,9 +2838,11 @@ def Cross2Icon():
     </template>
 
 
-def CrossCircledIcon():
+def CrossCircledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2512,9 +2852,11 @@ def CrossCircledIcon():
     </template>
 
 
-def LetterCaseToggleIcon():
+def LetterCaseToggleIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2524,9 +2866,11 @@ def LetterCaseToggleIcon():
     </template>
 
 
-def TextNoneIcon():
+def TextNoneIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2536,9 +2880,11 @@ def TextNoneIcon():
     </template>
 
 
-def CaretDownIcon():
+def CaretDownIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2548,9 +2894,11 @@ def CaretDownIcon():
     </template>
 
 
-def DropdownMenuIcon():
+def DropdownMenuIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2560,9 +2908,11 @@ def DropdownMenuIcon():
     </template>
 
 
-def InnerShadowIcon():
+def InnerShadowIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2632,9 +2982,11 @@ def InnerShadowIcon():
     </template>
 
 
-def TargetIcon():
+def TargetIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2644,9 +2996,11 @@ def TargetIcon():
     </template>
 
 
-def UnderlineIcon():
+def UnderlineIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2656,9 +3010,11 @@ def UnderlineIcon():
     </template>
 
 
-def BadgeIcon():
+def BadgeIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2668,9 +3024,11 @@ def BadgeIcon():
     </template>
 
 
-def VercelLogoIcon():
+def VercelLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2680,9 +3038,11 @@ def VercelLogoIcon():
     </template>
 
 
-def PlusCircledIcon():
+def PlusCircledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2692,9 +3052,11 @@ def PlusCircledIcon():
     </template>
 
 
-def SpeakerOffIcon():
+def SpeakerOffIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2704,9 +3066,11 @@ def SpeakerOffIcon():
     </template>
 
 
-def StretchHorizontallyIcon():
+def StretchHorizontallyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2716,9 +3080,11 @@ def StretchHorizontallyIcon():
     </template>
 
 
-def UpdateIcon():
+def UpdateIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2728,9 +3094,11 @@ def UpdateIcon():
     </template>
 
 
-def CameraIcon():
+def CameraIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2740,9 +3108,11 @@ def CameraIcon():
     </template>
 
 
-def WidthIcon():
+def WidthIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2752,9 +3122,11 @@ def WidthIcon():
     </template>
 
 
-def FileMinusIcon():
+def FileMinusIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2764,9 +3136,11 @@ def FileMinusIcon():
     </template>
 
 
-def CornersIcon():
+def CornersIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2776,9 +3150,11 @@ def CornersIcon():
     </template>
 
 
-def RocketIcon():
+def RocketIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2788,9 +3164,11 @@ def RocketIcon():
     </template>
 
 
-def StopIcon():
+def StopIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2800,9 +3178,11 @@ def StopIcon():
     </template>
 
 
-def ArrowDownIcon():
+def ArrowDownIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2812,9 +3192,11 @@ def ArrowDownIcon():
     </template>
 
 
-def GearIcon():
+def GearIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2824,9 +3206,11 @@ def GearIcon():
     </template>
 
 
-def CodeIcon():
+def CodeIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2836,9 +3220,11 @@ def CodeIcon():
     </template>
 
 
-def BorderBottomIcon():
+def BorderBottomIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 13.25L14 13.25V14.75L1 14.75V13.25Z" />
         <rect x="7" y="5" width="1" height="1" rx=".5" />
         <rect x="13" y="5" width="1" height="1" rx=".5" />
@@ -2870,9 +3256,11 @@ def BorderBottomIcon():
     </template>
 
 
-def FileIcon():
+def FileIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2882,9 +3270,11 @@ def FileIcon():
     </template>
 
 
-def LaptopIcon():
+def LaptopIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2894,9 +3284,11 @@ def LaptopIcon():
     </template>
 
 
-def DimensionsIcon():
+def DimensionsIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2906,9 +3298,11 @@ def DimensionsIcon():
     </template>
 
 
-def LayoutIcon():
+def LayoutIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2918,9 +3312,11 @@ def LayoutIcon():
     </template>
 
 
-def ThickArrowDownIcon():
+def ThickArrowDownIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2930,9 +3326,11 @@ def ThickArrowDownIcon():
     </template>
 
 
-def EyeClosedIcon():
+def EyeClosedIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2942,9 +3340,11 @@ def EyeClosedIcon():
     </template>
 
 
-def DoubleArrowLeftIcon():
+def DoubleArrowLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -2954,9 +3354,11 @@ def DoubleArrowLeftIcon():
     </template>
 
 
-def ShadowIcon():
+def ShadowIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           opacity=".05"
           fill-rule="evenodd"
@@ -3026,9 +3428,11 @@ def ShadowIcon():
     </template>
 
 
-def PinLeftIcon():
+def PinLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3038,9 +3442,11 @@ def PinLeftIcon():
     </template>
 
 
-def PersonIcon():
+def PersonIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3050,9 +3456,11 @@ def PersonIcon():
     </template>
 
 
-def EnterFullScreenIcon():
+def EnterFullScreenIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3062,9 +3470,11 @@ def EnterFullScreenIcon():
     </template>
 
 
-def SlashIcon():
+def SlashIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3074,9 +3484,11 @@ def SlashIcon():
     </template>
 
 
-def CircleBackslashIcon():
+def CircleBackslashIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3086,9 +3498,11 @@ def CircleBackslashIcon():
     </template>
 
 
-def MixerHorizontalIcon():
+def MixerHorizontalIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3098,9 +3512,11 @@ def MixerHorizontalIcon():
     </template>
 
 
-def Component1Icon():
+def Component1Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3110,9 +3526,11 @@ def Component1Icon():
     </template>
 
 
-def InfoCircledIcon():
+def InfoCircledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3122,9 +3540,11 @@ def InfoCircledIcon():
     </template>
 
 
-def ComponentInstanceIcon():
+def ComponentInstanceIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3134,9 +3554,11 @@ def ComponentInstanceIcon():
     </template>
 
 
-def PlusIcon():
+def PlusIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3146,9 +3568,11 @@ def PlusIcon():
     </template>
 
 
-def Link2Icon():
+def Link2Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3158,9 +3582,11 @@ def Link2Icon():
     </template>
 
 
-def AlignLeftIcon():
+def AlignLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3170,9 +3596,11 @@ def AlignLeftIcon():
     </template>
 
 
-def CheckboxIcon():
+def CheckboxIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3182,9 +3610,11 @@ def CheckboxIcon():
     </template>
 
 
-def AlignStretchIcon():
+def AlignStretchIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3194,9 +3624,11 @@ def AlignStretchIcon():
     </template>
 
 
-def DragHandleVerticalIcon():
+def DragHandleVerticalIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3206,9 +3638,11 @@ def DragHandleVerticalIcon():
     </template>
 
 
-def ChevronUpIcon():
+def ChevronUpIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3218,9 +3652,11 @@ def ChevronUpIcon():
     </template>
 
 
-def PilcrowIcon():
+def PilcrowIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3230,9 +3666,11 @@ def PilcrowIcon():
     </template>
 
 
-def FontSizeIcon():
+def FontSizeIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3242,9 +3680,11 @@ def FontSizeIcon():
     </template>
 
 
-def ZoomInIcon():
+def ZoomInIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3254,9 +3694,11 @@ def ZoomInIcon():
     </template>
 
 
-def SliderIcon():
+def SliderIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3266,9 +3708,11 @@ def SliderIcon():
     </template>
 
 
-def BorderStyleIcon():
+def BorderStyleIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3278,9 +3722,11 @@ def BorderStyleIcon():
     </template>
 
 
-def TokensIcon():
+def TokensIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3290,9 +3736,11 @@ def TokensIcon():
     </template>
 
 
-def TableIcon():
+def TableIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3302,9 +3750,11 @@ def TableIcon():
     </template>
 
 
-def MinusIcon():
+def MinusIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3314,9 +3764,11 @@ def MinusIcon():
     </template>
 
 
-def LinkBreak1Icon():
+def LinkBreak1Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3326,9 +3778,11 @@ def LinkBreak1Icon():
     </template>
 
 
-def BorderDottedIcon():
+def BorderDottedIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3338,9 +3792,11 @@ def BorderDottedIcon():
     </template>
 
 
-def PaddingIcon():
+def PaddingIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3350,9 +3806,11 @@ def PaddingIcon():
     </template>
 
 
-def BellIcon():
+def BellIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3362,9 +3820,11 @@ def BellIcon():
     </template>
 
 
-def SwitchIcon():
+def SwitchIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3374,9 +3834,11 @@ def SwitchIcon():
     </template>
 
 
-def ArrowTopRightIcon():
+def ArrowTopRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3386,9 +3848,11 @@ def ArrowTopRightIcon():
     </template>
 
 
-def AlignRightIcon():
+def AlignRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3398,9 +3862,11 @@ def AlignRightIcon():
     </template>
 
 
-def CodesandboxLogoIcon():
+def CodesandboxLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3410,9 +3876,11 @@ def CodesandboxLogoIcon():
     </template>
 
 
-def ViewGridIcon():
+def ViewGridIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3422,9 +3890,11 @@ def ViewGridIcon():
     </template>
 
 
-def TransparencyGridIcon():
+def TransparencyGridIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           opacity=".25"
           fill-rule="evenodd"
@@ -3435,9 +3905,11 @@ def TransparencyGridIcon():
     </template>
 
 
-def ShadowInnerIcon():
+def ShadowInnerIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           opacity=".05"
           fill-rule="evenodd"
@@ -3507,9 +3979,11 @@ def ShadowInnerIcon():
     </template>
 
 
-def LightningBoltIcon():
+def LightningBoltIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3519,9 +3993,11 @@ def LightningBoltIcon():
     </template>
 
 
-def JustifyCenterIcon():
+def JustifyCenterIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3531,9 +4007,11 @@ def JustifyCenterIcon():
     </template>
 
 
-def LayersIcon():
+def LayersIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3543,9 +4021,11 @@ def LayersIcon():
     </template>
 
 
-def GridIcon():
+def GridIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3555,9 +4035,11 @@ def GridIcon():
     </template>
 
 
-def TransformIcon():
+def TransformIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3567,9 +4049,11 @@ def TransformIcon():
     </template>
 
 
-def LetterCaseUppercaseIcon():
+def LetterCaseUppercaseIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3579,9 +4063,11 @@ def LetterCaseUppercaseIcon():
     </template>
 
 
-def StarFilledIcon():
+def StarFilledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z"
         />
@@ -3589,9 +4075,11 @@ def StarFilledIcon():
     </template>
 
 
-def ComponentBooleanIcon():
+def ComponentBooleanIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3601,9 +4089,11 @@ def ComponentBooleanIcon():
     </template>
 
 
-def SectionIcon():
+def SectionIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3613,9 +4103,11 @@ def SectionIcon():
     </template>
 
 
-def ArrowBottomRightIcon():
+def ArrowBottomRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3625,9 +4117,11 @@ def ArrowBottomRightIcon():
     </template>
 
 
-def SpaceBetweenVerticallyIcon():
+def SpaceBetweenVerticallyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3637,9 +4131,11 @@ def SpaceBetweenVerticallyIcon():
     </template>
 
 
-def MoveIcon():
+def MoveIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3649,9 +4145,11 @@ def MoveIcon():
     </template>
 
 
-def Crosshair2Icon():
+def Crosshair2Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3661,9 +4159,11 @@ def Crosshair2Icon():
     </template>
 
 
-def ThickArrowLeftIcon():
+def ThickArrowLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3673,9 +4173,11 @@ def ThickArrowLeftIcon():
     </template>
 
 
-def ReaderIcon():
+def ReaderIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3685,9 +4187,11 @@ def ReaderIcon():
     </template>
 
 
-def PaperPlaneIcon():
+def PaperPlaneIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3697,9 +4201,11 @@ def PaperPlaneIcon():
     </template>
 
 
-def DashIcon():
+def DashIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3709,9 +4215,11 @@ def DashIcon():
     </template>
 
 
-def ColorWheelIcon():
+def ColorWheelIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3721,9 +4229,11 @@ def ColorWheelIcon():
     </template>
 
 
-def DotFilledIcon():
+def DotFilledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M9.875 7.5C9.875 8.81168 8.81168 9.875 7.5 9.875C6.18832 9.875 5.125 8.81168 5.125 7.5C5.125 6.18832 6.18832 5.125 7.5 5.125C8.81168 5.125 9.875 6.18832 9.875 7.5Z"
         />
@@ -3731,9 +4241,11 @@ def DotFilledIcon():
     </template>
 
 
-def AlignStartIcon():
+def AlignStartIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3743,9 +4255,11 @@ def AlignStartIcon():
     </template>
 
 
-def SewingPinIcon():
+def SewingPinIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3755,9 +4269,11 @@ def SewingPinIcon():
     </template>
 
 
-def TextAlignTopIcon():
+def TextAlignTopIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3767,9 +4283,11 @@ def TextAlignTopIcon():
     </template>
 
 
-def QuoteIcon():
+def QuoteIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3779,9 +4297,11 @@ def QuoteIcon():
     </template>
 
 
-def GlobeIcon():
+def GlobeIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3806,9 +4326,11 @@ def GlobeIcon():
     </template>
 
 
-def FramerLogoIcon():
+def FramerLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3818,9 +4340,11 @@ def FramerLogoIcon():
     </template>
 
 
-def ComponentNoneIcon():
+def ComponentNoneIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3830,9 +4354,11 @@ def ComponentNoneIcon():
     </template>
 
 
-def RowSpacingIcon():
+def RowSpacingIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3842,9 +4368,11 @@ def RowSpacingIcon():
     </template>
 
 
-def Crosshair1Icon():
+def Crosshair1Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3854,9 +4382,11 @@ def Crosshair1Icon():
     </template>
 
 
-def FrameIcon():
+def FrameIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3866,9 +4396,11 @@ def FrameIcon():
     </template>
 
 
-def FaceIcon():
+def FaceIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3878,9 +4410,11 @@ def FaceIcon():
     </template>
 
 
-def BarChartIcon():
+def BarChartIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3890,9 +4424,11 @@ def BarChartIcon():
     </template>
 
 
-def LinkNone2Icon():
+def LinkNone2Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3902,9 +4438,11 @@ def LinkNone2Icon():
     </template>
 
 
-def OpacityIcon():
+def OpacityIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3914,9 +4452,11 @@ def OpacityIcon():
     </template>
 
 
-def ListBulletIcon():
+def ListBulletIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3926,9 +4466,11 @@ def ListBulletIcon():
     </template>
 
 
-def ScissorsIcon():
+def ScissorsIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3938,9 +4480,11 @@ def ScissorsIcon():
     </template>
 
 
-def SketchLogoIcon():
+def SketchLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3950,9 +4494,11 @@ def SketchLogoIcon():
     </template>
 
 
-def CursorArrowIcon():
+def CursorArrowIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3962,9 +4508,11 @@ def CursorArrowIcon():
     </template>
 
 
-def RulerHorizontalIcon():
+def RulerHorizontalIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -3974,9 +4522,11 @@ def RulerHorizontalIcon():
     </template>
 
 
-def BorderRightIcon():
+def BorderRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M13.25 1L13.25 14L14.75 14L14.75 1L13.25 1Z" />
         <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 7)" />
         <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 13)" />
@@ -4008,9 +4558,11 @@ def BorderRightIcon():
     </template>
 
 
-def OuterShadowIcon():
+def OuterShadowIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           opacity=".05"
           fill-rule="evenodd"
@@ -4050,9 +4602,11 @@ def OuterShadowIcon():
     </template>
 
 
-def DotsVerticalIcon():
+def DotsVerticalIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4062,9 +4616,11 @@ def DotsVerticalIcon():
     </template>
 
 
-def ResetIcon():
+def ResetIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4074,9 +4630,11 @@ def ResetIcon():
     </template>
 
 
-def BookmarkFilledIcon():
+def BookmarkFilledIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4086,9 +4644,11 @@ def BookmarkFilledIcon():
     </template>
 
 
-def ArrowTopLeftIcon():
+def ArrowTopLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4098,9 +4658,11 @@ def ArrowTopLeftIcon():
     </template>
 
 
-def ResumeIcon():
+def ResumeIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4110,9 +4672,11 @@ def ResumeIcon():
     </template>
 
 
-def CursorTextIcon():
+def CursorTextIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4122,9 +4686,11 @@ def CursorTextIcon():
     </template>
 
 
-def ClipboardIcon():
+def ClipboardIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4134,9 +4700,11 @@ def ClipboardIcon():
     </template>
 
 
-def JustifyStretchIcon():
+def JustifyStretchIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4146,9 +4714,11 @@ def JustifyStretchIcon():
     </template>
 
 
-def BoxIcon():
+def BoxIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4158,9 +4728,11 @@ def BoxIcon():
     </template>
 
 
-def ViewNoneIcon():
+def ViewNoneIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4170,9 +4742,11 @@ def ViewNoneIcon():
     </template>
 
 
-def LockOpen2Icon():
+def LockOpen2Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4182,9 +4756,11 @@ def LockOpen2Icon():
     </template>
 
 
-def LinkNone1Icon():
+def LinkNone1Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4194,9 +4770,11 @@ def LinkNone1Icon():
     </template>
 
 
-def CardStackIcon():
+def CardStackIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4206,9 +4784,11 @@ def CardStackIcon():
     </template>
 
 
-def BorderDashedIcon():
+def BorderDashedIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4218,9 +4798,11 @@ def BorderDashedIcon():
     </template>
 
 
-def ZoomOutIcon():
+def ZoomOutIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4230,17 +4812,21 @@ def ZoomOutIcon():
     </template>
 
 
-def TriangleDownIcon():
+def TriangleDownIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path d="M4 6H11L7.5 10.5L4 6Z" />
       </svg>
     </template>
 
 
-def SquareIcon():
+def SquareIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4250,9 +4836,11 @@ def SquareIcon():
     </template>
 
 
-def ArrowLeftIcon():
+def ArrowLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4262,9 +4850,11 @@ def ArrowLeftIcon():
     </template>
 
 
-def LoopIcon():
+def LoopIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4274,9 +4864,11 @@ def LoopIcon():
     </template>
 
 
-def BorderTopIcon():
+def BorderTopIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1.75L1 1.75L1 0.249999L14 0.25L14 1.75Z" />
         <rect x="8" y="10" width="1" height="1" rx=".5" transform="rotate(-180 8 10)" />
         <rect x="2" y="10" width="1" height="1" rx=".5" transform="rotate(-180 2 10)" />
@@ -4308,9 +4900,11 @@ def BorderTopIcon():
     </template>
 
 
-def DesktopIcon():
+def DesktopIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4320,9 +4914,11 @@ def DesktopIcon():
     </template>
 
 
-def PieChartIcon():
+def PieChartIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4332,9 +4928,11 @@ def PieChartIcon():
     </template>
 
 
-def ValueIcon():
+def ValueIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4344,9 +4942,11 @@ def ValueIcon():
     </template>
 
 
-def TrashIcon():
+def TrashIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4356,9 +4956,11 @@ def TrashIcon():
     </template>
 
 
-def CaretLeftIcon():
+def CaretLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4368,9 +4970,11 @@ def CaretLeftIcon():
     </template>
 
 
-def DragHandleDots1Icon():
+def DragHandleDots1Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <circle cx="4.5" cy="2.5" r=".6" />
         <circle cx="4.5" cy="4.5" r=".6" />
         <circle cx="4.5" cy="6.499" r=".6" />
@@ -4399,9 +5003,11 @@ def DragHandleDots1Icon():
     </template>
 
 
-def CornerBottomLeftIcon():
+def CornerBottomLeftIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4411,9 +5017,11 @@ def CornerBottomLeftIcon():
     </template>
 
 
-def Pencil1Icon():
+def Pencil1Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4423,9 +5031,11 @@ def Pencil1Icon():
     </template>
 
 
-def AlignBottomIcon():
+def AlignBottomIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4435,9 +5045,11 @@ def AlignBottomIcon():
     </template>
 
 
-def DownloadIcon():
+def DownloadIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4447,9 +5059,11 @@ def DownloadIcon():
     </template>
 
 
-def UploadIcon():
+def UploadIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4459,9 +5073,11 @@ def UploadIcon():
     </template>
 
 
-def HandIcon():
+def HandIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4471,9 +5087,11 @@ def HandIcon():
     </template>
 
 
-def SpaceEvenlyVerticallyIcon():
+def SpaceEvenlyVerticallyIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4483,9 +5101,11 @@ def SpaceEvenlyVerticallyIcon():
     </template>
 
 
-def FontBoldIcon():
+def FontBoldIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M5.10505 12C4.70805 12 4.4236 11.912 4.25171 11.736C4.0839 11.5559 4 11.2715 4 10.8827V4.11733C4 3.72033 4.08595 3.43588 4.25784 3.26398C4.43383 3.08799 4.71623 3 5.10505 3C6.42741 3 8.25591 3 9.02852 3C10.1373 3 11.0539 3.98153 11.0539 5.1846C11.0539 6.08501 10.6037 6.81855 9.70327 7.23602C10.8657 7.44851 11.5176 8.62787 11.5176 9.48128C11.5176 10.5125 10.9902 12 9.27734 12C8.77742 12 6.42626 12 5.10505 12ZM8.37891 8.00341H5.8V10.631H8.37891C8.9 10.631 9.6296 10.1211 9.6296 9.29877C9.6296 8.47643 8.9 8.00341 8.37891 8.00341ZM5.8 4.36903V6.69577H8.17969C8.53906 6.69577 9.27734 6.35939 9.27734 5.50002C9.27734 4.64064 8.48047 4.36903 8.17969 4.36903H5.8Z"
         />
@@ -4493,9 +5113,11 @@ def FontBoldIcon():
     </template>
 
 
-def ComponentPlaceholderIcon():
+def ComponentPlaceholderIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4508,9 +5130,11 @@ def ComponentPlaceholderIcon():
     </template>
 
 
-def ExternalLinkIcon():
+def ExternalLinkIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4520,9 +5144,11 @@ def ExternalLinkIcon():
     </template>
 
 
-def MixerVerticalIcon():
+def MixerVerticalIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4532,9 +5158,11 @@ def MixerVerticalIcon():
     </template>
 
 
-def TwitterLogoIcon():
+def TwitterLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4544,9 +5172,11 @@ def TwitterLogoIcon():
     </template>
 
 
-def ModulzLogoIcon():
+def ModulzLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4556,9 +5186,11 @@ def ModulzLogoIcon():
     </template>
 
 
-def DividerHorizontalIcon():
+def DividerHorizontalIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4568,9 +5200,11 @@ def DividerHorizontalIcon():
     </template>
 
 
-def Half1Icon():
+def Half1Icon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4580,9 +5214,11 @@ def Half1Icon():
     </template>
 
 
-def CircleIcon():
+def CircleIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4592,9 +5228,11 @@ def CircleIcon():
     </template>
 
 
-def QuestionMarkIcon():
+def QuestionMarkIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4604,9 +5242,11 @@ def QuestionMarkIcon():
     </template>
 
 
-def HeartIcon():
+def HeartIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4616,9 +5256,11 @@ def HeartIcon():
     </template>
 
 
-def LinkedinLogoIcon():
+def LinkedinLogoIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4628,9 +5270,11 @@ def LinkedinLogoIcon():
     </template>
 
 
-def TrackNextIcon():
+def TrackNextIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4640,9 +5284,11 @@ def TrackNextIcon():
     </template>
 
 
-def GroupIcon():
+def GroupIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4652,9 +5298,11 @@ def GroupIcon():
     </template>
 
 
-def BorderNoneIcon():
+def BorderNoneIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <rect x="7" y="5.025" width="1" height="1" rx=".5" />
         <rect x="13" y="5.025" width="1" height="1" rx=".5" />
         <rect x="7" y="3.025" width="1" height="1" rx=".5" />
@@ -4692,9 +5340,11 @@ def BorderNoneIcon():
     </template>
 
 
-def LetterCaseLowercaseIcon():
+def LetterCaseLowercaseIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4704,9 +5354,11 @@ def LetterCaseLowercaseIcon():
     </template>
 
 
-def ChatBubbleIcon():
+def ChatBubbleIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4716,9 +5368,11 @@ def ChatBubbleIcon():
     </template>
 
 
-def EnvelopeClosedIcon():
+def EnvelopeClosedIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4728,9 +5382,11 @@ def EnvelopeClosedIcon():
     </template>
 
 
-def LapTimerIcon():
+def LapTimerIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4740,9 +5396,11 @@ def LapTimerIcon():
     </template>
 
 
-def FontRomanIcon():
+def FontRomanIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4752,9 +5410,11 @@ def FontRomanIcon():
     </template>
 
 
-def InputIcon():
+def InputIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4764,9 +5424,11 @@ def InputIcon():
     </template>
 
 
-def HamburgerMenuIcon():
+def HamburgerMenuIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4776,9 +5438,11 @@ def HamburgerMenuIcon():
     </template>
 
 
-def ArrowRightIcon():
+def ArrowRightIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -4788,9 +5452,11 @@ def ArrowRightIcon():
     </template>
 
 
-def MoonIcon():
+def MoonIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
     <template>
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -5137,8 +5803,8 @@ name_to_icon = {
 }
 
 
-def Icon(type):
+def Icon(type, **kwargs):
     ConcreteIcon = name_to_icon[type]
     <template>
-      <ConcreteIcon />
+      <ConcreteIcon {**kwargs} />
     </template>

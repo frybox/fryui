@@ -19,7 +19,7 @@ def Main():
           <div flex gap-3>
             <Button primary>
               Shuffle
-              <ShuffleIcon class="h-5 w-5"/>
+              <ShuffleIcon scale={3}/>
             </Button>
             <Button outline secondary>
               <Half2Icon class="h-6 w-6"/>
@@ -39,7 +39,7 @@ def Main():
               <Icon type="corner-top-left" class="h-7 w-7" />
             </Button>
             <Button outline accent>
-              <Icon type='file-plus' class="h-8 w-8" />
+              <Icon type='file-plus' scale={3}/>
             </Button>
             <Icon type='image' />
             <Icon type='eye-none' />
