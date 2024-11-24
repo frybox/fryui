@@ -138,7 +138,7 @@ def VSplit(resizable=True, children=[]):
     </template>
 
 
-def HCenter(children, resizable=True, left=None, right=None):
+def HCenter(children, resizable=True, left=None, right=None, min_width='sm'):
     if not children or len(children) != 1:
         raise RuntimeError("HCenter should have and only have one child.")
     center = children[0]
@@ -151,6 +151,16 @@ def HCenter(children, resizable=True, left=None, right=None):
     wright = get_width(right) or '1fr'
     if wleft != wright:
         raise RuntimeError("left and right elements in HCenter should have the same width")
+
+    if min_width in ('sm', 'md', 'lg', 'xl', '2xl'):
+      widths = dict(sm=640, md=768, lg=1024, xl=1280, xl2=1536)
+      min_width = min_width if min_width != '2xl' else 'xl2'
+      min_width = widths[min_width]
+    elif isinstance(min_width, str) and min_width.endswith('px'):
+      min_width = int(min_width[:-2])
+    elif not isinstance(min_width, int):
+      raise RuntimeError(f'invalid min_width value: {min_width}')
+
     gridprop = {
         col_prop_name: ' '.join([wleft, '1px', wcenter, '1px', wright])
     }
@@ -165,7 +175,7 @@ def HCenter(children, resizable=True, left=None, right=None):
         {right}
       </div>
     </template>
-    <script>
+    <script minWidth={min_width}>
         const numeric = (value, unit) => Number(value.slice(0, -1 * unit.length))
         const parseValue = function (value) {
             if (value.endsWith('px'))
@@ -183,6 +193,21 @@ def HCenter(children, resizable=True, left=None, right=None):
 
         const step = 5; //px
         const columnPropName = 'grid-template-columns';
+
+        const mediaQuery = window.matchMedia(`(max-width: ${minWidth}px)`);
+        let savedGridProp;
+        const handleMediaChange = (e) => {
+            if (e.matches) {
+                savedGridProp = grid.style[columnPropName];
+                grid.style[columnPropName] = '0px 0px 1fr 0px 0px';
+            } else {
+                if (savedGridProp) {
+                    grid.style[columnPropName] = savedGridProp;
+                }
+            }
+        }
+        handleMediaChange(mediaQuery);
+        mediaQuery.addEventListener('change', handleMediaChange);
 
         const firstNonZero = (tracks, type) => {
             for (let i = 0; i < tracks.length; i++) {
