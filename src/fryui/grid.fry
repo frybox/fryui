@@ -166,7 +166,7 @@ def HCenter(children, resizable=True, left=None, right=None):
         {right}
       </div>
     </template>
-    <script minWidth={min_width}>
+    <script>
         const numeric = (value, unit) => Number(value.slice(0, -1 * unit.length))
         const parseValue = function (value) {
             if (value.endsWith('px'))
