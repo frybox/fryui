@@ -335,6 +335,7 @@ __all__ = [
     "HamburgerMenuIcon",
     "ArrowRightIcon",
     "MoonIcon",
+    "CenteredLayoutIcon",
     "Icon",
 ]
 
@@ -5466,6 +5467,20 @@ def MoonIcon(width=15, height=15, scale=1):
     </template>
 
 
+def CenteredLayoutIcon(width=15, height=15, scale=1):
+    width = int(width*scale)
+    height = int(height*scale)
+    <template>
+      <svg {width} {height} viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="15" height="1"/>
+        <rect x="14" y="1" width="1" height="14"/>
+        <rect x="0" y="14" width="14" height="1"/>
+        <rect x="0" y="1" width="1" height="13"/>
+        <rect x="5" y="1" width="5" height="13"/>
+      </svg>
+    </template>
+
+    
 name_to_icon = {
     "shuffle": ShuffleIcon,
     "shadow-outer": ShadowOuterIcon,
@@ -5800,6 +5815,7 @@ name_to_icon = {
     "hamburger-menu": HamburgerMenuIcon,
     "arrow-right": ArrowRightIcon,
     "moon": MoonIcon,
+    "centered-layout": CenteredLayoutIcon,
 }
 
 
