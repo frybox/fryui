@@ -160,9 +160,9 @@ def HCenter(children, resizable=True, left=None, right=None):
     <template>
       <div ref=(grid) grid max-sm:!grid-cols-0_0_1fr_0_0 h-full style={gridprop}>
         {left}
-        <Gutter center col={1} {ncol} {resizable} />
+        <Gutter ref=(leftGutter)  center col={1} {ncol} {resizable} />
         {center}
-        <Gutter center col={3} {ncol} {resizable} />
+        <Gutter ref=(rightGutter) center col={3} {ncol} {resizable} />
         {right}
       </div>
     </template>
@@ -262,29 +262,44 @@ def HCenter(children, resizable=True, left=None, right=None):
 
         this.broaden = () => {
             initialize();
-            let sideSize = pxcols[0].numeric;
+            let leftSize = pxcols[0].numeric;
             let centerSize = pxcols[2].numeric;
-            if (sideSize <= step) return;
-            sideSize -= step;
+            let rightSize = pxcols[4].numeric;
+            if (leftSize <= step || rightSize <= step)
+              return;
+            leftSize -= step;
+            rightSize -= step;
             centerSize += step + step;
-            setColSize(0, sideSize);
+            setColSize(0, leftSize);
             setColSize(2, centerSize);
-            setColSize(4, sideSize);
+            setColSize(4, rightSize);
             grid.style[columnPropName] = unparse(cols);
         }
 
         this.narrow = () => {
             initialize();
-            let sideSize = pxcols[0].numeric;
+            let leftSize = pxcols[0].numeric;
             let centerSize = pxcols[2].numeric;
+            let rightSize = pxcols[4].numeric;
             if (centerSize <= step + step) return;
-            sideSize += step;
+            leftSize += step;
+            rightSize += step;
             centerSize -= step + step;
-            setColSize(0, sideSize);
+            setColSize(0, leftSize);
             setColSize(2, centerSize);
-            setColSize(4, sideSize);
+            setColSize(4, rightSize);
             grid.style[columnPropName] = unparse(cols);
         }
+
+        this.setCentered = (center) => {
+            if (center && !leftGutter.centered) {
+                grid.style[columnPropName] = '1fr 1px 2fr 1px 1fr';
+            }
+            leftGutter.centered = center;
+            rightGutter.centered = center;
+        }
+        
+        this.isCentered = () => topGutter.centered;
     </script>
 
 
@@ -309,9 +324,9 @@ def VCenter(children, resizable=True, top=None, bottom=None):
     <template>
       <div ref=(grid) grid h-full style={gridprop}>
         {top}
-        <Gutter center row={1} {nrow} {resizable} />
+        <Gutter ref=(topGutter) center row={1} {nrow} {resizable} />
         {center}
-        <Gutter center row={3} {nrow} {resizable} />
+        <Gutter ref=(bottomGutter) center row={3} {nrow} {resizable} />
         {bottom}
       </div>
     </template>
@@ -394,29 +409,44 @@ def VCenter(children, resizable=True, top=None, bottom=None):
 
         this.broaden = () => {
             initialize();
-            let sideSize = pxrows[0].numeric;
+            let topSize = pxrows[0].numeric;
             let centerSize = pxrows[2].numeric;
-            if (sideSize <= step) return;
-            sideSize -= step;
+            let bottomSize = pxrows[4].numeric;
+            if (topSize <= step || bottomSize <= step)
+              return;
+            topSize -= step;
+            bottomSize -= step;
             centerSize += step + step;
-            setRowSize(0, sideSize);
+            setRowSize(0, topSize);
             setRowSize(2, centerSize);
-            setRowSize(4, sideSize);
+            setRowSize(4, bottomSize);
             grid.style[rowPropName] = unparse(rows);
         }
 
         this.narrow = () => {
             initialize();
-            let sideSize = pxrows[0].numeric;
+            let topSize = pxrows[0].numeric;
             let centerSize = pxrows[2].numeric;
+            let bottomSize = pxrows[4].numeric;
             if (centerSize <= step + step) return;
-            sideSize += step;
+            topSize += step;
+            bottomSize += step;
             centerSize -= step + step;
-            setRowSize(0, sideSize);
+            setRowSize(0, topSize);
             setRowSize(2, centerSize);
-            setRowSize(4, sideSize);
+            setRowSize(4, bottomSize);
             grid.style[rowPropName] = unparse(rows);
         }
+
+        this.setCentered = (center) => {
+            if (center && !topGutter.centered) {
+                grid.style[rowPropName] = '1fr 1px 2fr 1px 1fr';
+            }
+            topGutter.centered = center;
+            bottomGutter.centered = center;
+        }
+
+        this.isCentered = () => topGutter.centered;
     </script>
 
 
@@ -615,7 +645,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
                 prop = window.getComputedStyle(grid)[rowPropName];
                 if (prop) {
                     pxrows = parse(prop);
-                    if (center) {
+                    if (this.centered) {
                         contentSize = pxrows[0].numeric + pxrows[2].numeric + pxrows[4].numeric;
                     }
                 }
@@ -645,7 +675,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
                 prop = window.getComputedStyle(grid)[columnPropName];
                 if (prop) {
                     pxcols = parse(prop);
-                    if (center) {
+                    if (this.centered) {
                         contentSize = pxcols[0].numeric + pxcols[2].numeric + pxcols[4].numeric;
                     }
                 }
@@ -700,7 +730,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
                 const maxPos = gridTop + rowEnd - rowOffset2;
                 if (mouseY < minPos) mouseY = minPos;
                 if (mouseY > maxPos) mouseY = maxPos;
-                if (center) {
+                if (this.centered) {
                     let sideSize = 0;
                     let centerSize = 0;
                     // row is 1 or row is 3
@@ -725,7 +755,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
                 const maxPos = gridLeft + colEnd - colOffset2;
                 if (mouseX < minPos) mouseX = minPos;
                 if (mouseX > maxPos) mouseX = maxPos;
-                if (center) {
+                if (this.centered) {
                     let sideSize = 0;
                     let centerSize = 0;
                     // col is 1 or col is 3
@@ -765,6 +795,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
             setHide();
         }
 
+        this.centered = center;
         this.show = show;
         this.hide = hide;
         this.col = col;
