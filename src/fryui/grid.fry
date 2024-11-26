@@ -138,7 +138,7 @@ def VSplit(resizable=True, children=[]):
     </template>
 
 
-def HCenter(children, resizable=True, left=None, right=None):
+def HCenter(children, resizable=True, left=None, right=None, min_width=None):
     if not children or len(children) != 1:
         raise RuntimeError("HCenter should have and only have one child.")
     center = children[0]
@@ -157,8 +157,20 @@ def HCenter(children, resizable=True, left=None, right=None):
     }
     ncol = 5
 
+    styles = ['grid', 'h-full']
+    if min_width == 'sm':
+      styles.append('max-sm:!grid-cols-0_0_1fr_0_0')
+    elif min_width == 'md':
+      styles.append('max-md:!grid-cols-0_0_1fr_0_0')
+    elif min_width == 'lg':
+      styles.append('max-lg:!grid-cols-0_0_1fr_0_0')
+    elif min_width == 'xl':
+      styles.append('max-xl:!grid-cols-0_0_1fr_0_0')
+    elif min_width == '2xl':
+      styles.append('max-2xl:!grid-cols-0_0_1fr_0_0')
+
     <template>
-      <div ref=(grid) grid max-sm:!grid-cols-0_0_1fr_0_0 h-full style={gridprop}>
+      <div ref=(grid) {*styles} style={gridprop}>
         {left}
         <Gutter ref=(leftGutter)  center col={1} {ncol} {resizable} />
         {center}
