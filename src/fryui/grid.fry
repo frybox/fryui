@@ -298,8 +298,8 @@ def HCenter(children, resizable=True, left=None, right=None):
             leftGutter.centered = center;
             rightGutter.centered = center;
         }
-        
-        this.isCentered = () => topGutter.centered;
+
+        this.isCentered = () => leftGutter.centered;
     </script>
 
 
