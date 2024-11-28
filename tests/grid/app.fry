@@ -29,7 +29,7 @@ def App():
             <Center>E</Center>
             <Center>F</Center>
           </Grid>
-          <HCenter ref=(hcenter)>
+          <HCenter ref=(hcenter) min_width="md">
             <div bg-primary-bgx text-primary-t width="3fr">
               这是一个HCenter
             </div>
