@@ -56,7 +56,7 @@ def Grid(columns=[], rows=[], resizable=True, children=[]):
             const ch = this.fryelement.children.item(n);
             if (ch && ch.frycomponents && ch.frycomponents.length > 0) {
                 const comp = ch.frycomponents[0];
-                if (comp.fryname === 'Gutter') {
+                if (comp.isGutter) {
                     gutters.push(comp);
                 }
             }
@@ -71,7 +71,7 @@ def Grid(columns=[], rows=[], resizable=True, children=[]):
             const ch = this.fryelement.children.item(n);
             if (ch && ch.frycomponents && ch.frycomponents.length > 0) {
                 const comp = ch.frycomponents[0];
-                if (comp.fryname === 'Gutter') {
+                if (comp.isGutter) {
                     gutters.push(comp);
                 }
             }
@@ -112,6 +112,33 @@ def HSplit(resizable=True, children=[]):
         {newchildren}
       </div>
     </template>
+    <script {nrow} {resizable}>
+      this.hgutters = (r) => {
+        const ch = this.fryelement.children.item(r);
+        if (ch && ch.frycomponents && ch.frycomponents.length > 0) {
+            const comp = ch.frycomponents[0];
+            if (comp.isGutter) {
+                return [comp];
+            }
+        }
+        return [];
+      }
+
+      this.vgutters = (c) => {
+        // c必定为0
+        const gutters = [];
+        for (let r=0; r<nrow; r++) {
+            const ch = this.fryelement.children.item(r);
+            if (ch && ch.frycomponents && ch.frycomponents.length > 0) {
+                const comp = ch.frycomponents[0];
+                if (comp.isGutter) {
+                    gutters.push(comp);
+                }
+            }
+        }
+        return gutters;
+      }
+    </script>
 
 
 def VSplit(resizable=True, children=[]):
@@ -136,6 +163,33 @@ def VSplit(resizable=True, children=[]):
         {newchildren}
       </div>
     </template>
+    <script {ncol} {resizable}>
+      this.hgutters = (r) => {
+        // r必定为0
+        const gutters = [];
+        for (let c=0; c<ncol; c++) {
+            const ch = this.fryelement.children.item(c);
+            if (ch && ch.frycomponents && ch.frycomponents.length > 0) {
+                const comp = ch.frycomponents[0];
+                if (comp.isGutter) {
+                    gutters.push(comp);
+                }
+            }
+        }
+        return gutters;
+      }
+
+      this.vgutters = (c) => {
+        const ch = this.fryelement.children.item(c);
+        if (ch && ch.frycomponents && ch.frycomponents.length > 0) {
+            const comp = ch.frycomponents[0];
+            if (comp.isGutter) {
+                return [comp];
+            }
+        }
+        return [];
+      }
+    </script>
 
 
 def HCenter(children, resizable=True, left=None, right=None, min_width=None):
@@ -312,6 +366,16 @@ def HCenter(children, resizable=True, left=None, right=None, min_width=None):
         }
 
         this.isCentered = () => leftGutter.centered;
+        this.hgutters = (r) => {
+          // r必定为0
+          return [leftGutter, rightGutter];
+        }
+
+        this.vgutters = (c) => {
+          if (c === 1) return [leftGutter];
+          else if (c === 3) return [rightGutter];
+          return [];
+        }
     </script>
 
 
@@ -459,6 +523,15 @@ def VCenter(children, resizable=True, top=None, bottom=None):
         }
 
         this.isCentered = () => topGutter.centered;
+        this.hgutters = (r) => {
+          if (r === 1) return [topGutter];
+          else if (r === 3) return [bottomGutter];
+        }
+
+        this.vgutters = (c) => {
+          // c必定为0
+          return [topGutter, bottomGutter];
+        }
     </script>
 
 
@@ -612,6 +685,10 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
         const hide = () => bar.classList.remove(bgColor);
 
         const getGutterLine = () => {
+            if (this.centered) {
+                if (ish) return this.fryparent.vgutters(0);
+                if (isv) return this.fryparent.hgutters(0);
+            }
             if (ncol === 1 || nrow === 1) {
                 return [this];
             }
@@ -814,6 +891,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
         this.row = row;
         this.ish = ish;
         this.isv = isv;
+        this.isGutter = true;
     </script>
 
 
