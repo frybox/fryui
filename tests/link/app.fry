@@ -1,4 +1,4 @@
-from fryhcs import Element, html
+from fryweb import Element, html
 from flask import Flask
 from fryui import Link
 

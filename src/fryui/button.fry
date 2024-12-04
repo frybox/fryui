@@ -1,4 +1,4 @@
-from fryhcs import Element
+from fryweb import Element
 
 
 def Button (

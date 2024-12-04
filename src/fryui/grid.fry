@@ -1,4 +1,4 @@
-from fryhcs import Element
+from fryweb import Element
 
 col_prop_name = 'grid-template-columns'
 row_prop_name = 'grid-template-rows'
@@ -818,7 +818,7 @@ def Gutter(col=0, row=0, ncol=1, nrow=1, resizable=True, center=False):
 
 
 if __name__ == '__main__':
-    from fryhcs import render
+    from fryweb import render
     columns = ['1fr', '1fr', '1fr']
     rows = '1fr 1fr'
     print(render(<Grid {columns} {rows}>

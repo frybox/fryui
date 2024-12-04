@@ -1,4 +1,4 @@
-from fryhcs import html, Element
+from fryweb import html, Element
 from flask import Flask
 from fryui import Grid, HSplit, VSplit, HCenter, VCenter, Button
 
@@ -53,7 +53,7 @@ def App():
       </div>
     </template>
     <script>
-        import { signal } from 'fryhcs';
+        import { signal } from 'fryweb';
         const hbroaden = () => hcenter.broaden();
         const hnarrow = () => hcenter.narrow();
         const vbroaden = () => vcenter.broaden();
