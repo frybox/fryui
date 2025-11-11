@@ -7,7 +7,7 @@ keywords = [
 ]
 authors = [{name="Zenk Ju", email="juzejian@gmail.com"},]
 description = "A python web UI framework based on fryweb"
-license = "MIT"
+license = { file = "LICENSE" }
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
