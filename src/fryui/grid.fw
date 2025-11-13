@@ -105,6 +105,7 @@ def HSplit(resizable=True, children=[]):
             rows.append('1px')
     gridprop = {
         row_prop_name: ' '.join(rows),
+        col_prop_name: '100%',
     }
 
     <template>
@@ -156,6 +157,7 @@ def VSplit(resizable=True, children=[]):
             cols.append('1px')
     gridprop = {
         col_prop_name: ' '.join(cols),
+        row_prop_name: '100%',
     }
 
     <template>
@@ -207,7 +209,8 @@ def HCenter(children, resizable=True, left=None, right=None, min_width=None):
         raise RuntimeError("left and right elements in HCenter should have the same width")
 
     gridprop = {
-        col_prop_name: ' '.join([wleft, '1px', wcenter, '1px', wright])
+        col_prop_name: ' '.join([wleft, '1px', wcenter, '1px', wright]),
+        row_prop_name: '100%',
     }
     ncol = 5
 
@@ -393,7 +396,8 @@ def VCenter(children, resizable=True, top=None, bottom=None):
     if wtop != wbottom:
         raise RuntimeError("top and bottom elements in VCenter should have the same width")
     gridprop = {
-        row_prop_name: ' '.join([wtop, '1px', wcenter, '1px', wbottom])
+        row_prop_name: ' '.join([wtop, '1px', wcenter, '1px', wbottom]),
+        col_prop_name: '100%',
     }
     nrow = 5
 
