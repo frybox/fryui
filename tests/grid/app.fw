@@ -29,7 +29,7 @@ def App():
             <Center>E</Center>
             <Center>F</Center>
           </Grid>
-          <HCenter ref=(hcenter) min_width="md">
+          <HCenter ref=(hcenter) min_width="md" centered={False}>
             <div bg-primary-bgx text-primary-t width="3fr">
               这是一个HCenter
             </div>
@@ -37,9 +37,9 @@ def App():
           <Center>
             <Button primary @click=(hbroaden)>扩大</Button>
             <Button primary @click=(hnarrow)>缩小</Button>
-            <Button primary @click=(toggleHcenter)>Centered:[true](hcentered)</Button>
+            <Button primary @click=(toggleHcenter)>Centered:[false](hcentered)</Button>
           </Center>
-          <VCenter ref=(vcenter)>
+          <VCenter ref=(vcenter) centered={False}>
             <div bg-primary-bgx text-primary-t height="3fr">
               这是一个VCenter
             </div>
@@ -47,7 +47,7 @@ def App():
           <Center>
             <Button primary @click=(vbroaden)>扩大</Button>
             <Button primary @click=(vnarrow)>缩小</Button>
-            <Button primary @click=(toggleVcenter)>Centered:[true](vcentered)</Button>
+            <Button primary @click=(toggleVcenter)>Centered:[false](vcentered)</Button>
           </Center>
         </HSplit>
       </div>
@@ -58,8 +58,8 @@ def App():
         const hnarrow = () => hcenter.narrow();
         const vbroaden = () => vcenter.broaden();
         const vnarrow = () => vcenter.narrow();
-        const hcentered = signal(true);
-        const vcentered = signal(true);
+        const hcentered = signal(false);
+        const vcentered = signal(false);
         const toggleHcenter = () => {
           if (hcentered.peek()) {
             hcentered.value = false;

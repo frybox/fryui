@@ -194,7 +194,7 @@ def VSplit(resizable=True, children=[]):
     </script>
 
 
-def HCenter(children, resizable=True, left=None, right=None, min_width=None):
+def HCenter(children, centered=True, resizable=True, left=None, right=None, min_width=None):
     if not children or len(children) != 1:
         raise RuntimeError("HCenter should have and only have one child.")
     center = children[0]
@@ -229,9 +229,9 @@ def HCenter(children, resizable=True, left=None, right=None, min_width=None):
     <template>
       <div ref=(grid) {*styles} style={gridprop}>
         {left}
-        <Gutter ref=(leftGutter)  center col={1} {ncol} {resizable} />
+        <Gutter ref=(leftGutter)  center={centered} col={1} {ncol} {resizable} />
         {center}
-        <Gutter ref=(rightGutter) center col={3} {ncol} {resizable} />
+        <Gutter ref=(rightGutter) center={centered} col={3} {ncol} {resizable} />
         {right}
       </div>
     </template>
@@ -382,7 +382,7 @@ def HCenter(children, resizable=True, left=None, right=None, min_width=None):
     </script>
 
 
-def VCenter(children, resizable=True, top=None, bottom=None):
+def VCenter(children, centered=True, resizable=True, top=None, bottom=None):
     if not children or len(children) != 1:
         raise RuntimeError("VCenter should have and only have one child.")
     center = children[0]
@@ -404,9 +404,9 @@ def VCenter(children, resizable=True, top=None, bottom=None):
     <template>
       <div ref=(grid) grid h-full style={gridprop}>
         {top}
-        <Gutter ref=(topGutter) center row={1} {nrow} {resizable} />
+        <Gutter ref=(topGutter) center={centered} row={1} {nrow} {resizable} />
         {center}
-        <Gutter ref=(bottomGutter) center row={3} {nrow} {resizable} />
+        <Gutter ref=(bottomGutter) center={centered} row={3} {nrow} {resizable} />
         {bottom}
       </div>
     </template>
